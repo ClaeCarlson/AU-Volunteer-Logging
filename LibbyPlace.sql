@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.16, for osx10.12 (x86_64)
 --
--- Host: localhost    Database: LibbyPlace
+-- Host: localhost    Database: libbyplace
 -- ------------------------------------------------------
--- Server version	5.7.16-log
+-- Server version	5.7.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,13 +23,14 @@ DROP TABLE IF EXISTS `admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admins` (
-  `id` char(7) NOT NULL,
+  `adminId` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `encrypted_password` varchar(255) NOT NULL,
   `firstName` varchar(25) NOT NULL,
   `lastName` varchar(25) NOT NULL,
   `phoneNum` char(11) DEFAULT NULL,
-  `dateJoined` date NOT NULL
+  `dateJoined` date NOT NULL,
+  PRIMARY KEY (`adminId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,9 +51,13 @@ DROP TABLE IF EXISTS `hours`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hours` (
-  `id` char(7) NOT NULL,
-  `hoursWorked` int(11) NOT NULL,
-  `weekWorked` date NOT NULL
+  `hoursId` int(11) NOT NULL,
+  `hoursWorked` decimal(6,2) NOT NULL,
+  `weekWorked` date NOT NULL,
+  `volunteerId` int(11) NOT NULL,
+  PRIMARY KEY (`hoursId`,`volunteerId`),
+  KEY `fk_hours_volunteers_idx` (`volunteerId`),
+  CONSTRAINT `fk_hours_volunteers` FOREIGN KEY (`volunteerId`) REFERENCES `volunteers` (`volunteerId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,8 +79,10 @@ DROP TABLE IF EXISTS `volunteerdescriptions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `volunteerdescriptions` (
   `datesAvail` date DEFAULT NULL,
-  `typeVol` varchar(25) NOT NULL,
-  `infoVolunteer` varchar(100) NOT NULL
+  `infoVolunteer` varchar(100) NOT NULL,
+  `volunteerId` int(11) NOT NULL,
+  PRIMARY KEY (`volunteerId`),
+  CONSTRAINT `fk_volunteerdescriptions_volunteers1` FOREIGN KEY (`volunteerId`) REFERENCES `volunteers` (`volunteerId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -96,14 +103,15 @@ DROP TABLE IF EXISTS `volunteers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `volunteers` (
-  `id` char(7) NOT NULL,
+  `volunteerId` int(11) NOT NULL,
   `firstName` varchar(25) NOT NULL,
   `lastName` varchar(25) NOT NULL,
   `email` varchar(255) NOT NULL,
   `encrypted_password` varchar(255) NOT NULL,
   `dateJoined` date NOT NULL,
   `phoneNum` char(11) DEFAULT NULL,
-  `volType` varchar(25) NOT NULL
+  `volType` varchar(25) NOT NULL,
+  PRIMARY KEY (`volunteerId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -125,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-07  9:49:34
+-- Dump completed on 2017-11-13 22:47:25
