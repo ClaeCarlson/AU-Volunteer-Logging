@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114044032) do
+ActiveRecord::Schema.define(version: 20171114053135) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "adminId"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 20171114044032) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hours", primary_key: ["hoursId", "volunteerId"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "hoursId", null: false
+    t.decimal "hoursWorked", precision: 6, scale: 2, null: false
+    t.date "weekWorked", null: false
+    t.integer "volunteerId", null: false
+    t.index ["volunteerId"], name: "fk_hours_volunteers_idx"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", limit: 128, null: false
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128, null: false
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token"
+  end
+
   create_table "volunteer_descriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "volunteerId"
     t.string "infoVolunteer"
@@ -32,17 +51,15 @@ ActiveRecord::Schema.define(version: 20171114044032) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "volunteers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "volunteerId"
-    t.string "firstName"
-    t.string "lastName"
-    t.string "email"
-    t.string "encrypted_password"
-    t.date "dateJoined"
-    t.string "phoneNum"
-    t.string "volType"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "volunteers", primary_key: "volunteerId", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "firstName", limit: 25, null: false
+    t.string "lastName", limit: 25, null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
+    t.date "dateJoined", null: false
+    t.string "phoneNum", limit: 11
+    t.string "volType", limit: 25, null: false
   end
 
+  add_foreign_key "hours", "volunteers", column: "volunteerId", primary_key: "volunteerId", name: "fk_hours_volunteers"
 end
