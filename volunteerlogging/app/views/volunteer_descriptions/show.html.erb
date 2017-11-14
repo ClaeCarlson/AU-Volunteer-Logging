@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Volunteerid:</strong>
+  <%= @volunteer_description.volunteerId %>
+</p>
+
+<p>
+  <strong>Infovolunteer:</strong>
+  <%= @volunteer_description.infoVolunteer %>
+</p>
+
+<p>
+  <strong>Datesavail:</strong>
+  <%= @volunteer_description.datesAvail %>
+</p>
+
+<%= link_to 'Edit', edit_volunteer_description_path(@volunteer_description) %> |
+<%= link_to 'Back', volunteer_descriptions_path %>

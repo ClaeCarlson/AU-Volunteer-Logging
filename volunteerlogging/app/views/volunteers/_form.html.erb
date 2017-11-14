@@ -1,0 +1,57 @@
+<%= form_with(model: volunteer, local: true) do |form| %>
+  <% if volunteer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(volunteer.errors.count, "error") %> prohibited this volunteer from being saved:</h2>
+
+      <ul>
+      <% volunteer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :volunteerId %>
+    <%= form.number_field :volunteerId, id: :volunteer_volunteerId %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName, id: :volunteer_firstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName, id: :volunteer_lastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :volunteer_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :encrypted_password %>
+    <%= form.text_field :encrypted_password, id: :volunteer_encrypted_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dateJoined %>
+    <%= form.date_select :dateJoined, id: :volunteer_dateJoined %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phoneNum %>
+    <%= form.text_field :phoneNum, id: :volunteer_phoneNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :volType %>
+    <%= form.text_field :volType, id: :volunteer_volType %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

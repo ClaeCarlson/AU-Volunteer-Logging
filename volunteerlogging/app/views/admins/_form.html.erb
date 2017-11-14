@@ -1,0 +1,52 @@
+<%= form_with(model: admin, local: true) do |form| %>
+  <% if admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+      <ul>
+      <% admin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :adminId %>
+    <%= form.number_field :adminId, id: :admin_adminId %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName, id: :admin_firstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName, id: :admin_lastName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :admin_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :encrypted_password %>
+    <%= form.text_field :encrypted_password, id: :admin_encrypted_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dateJoined %>
+    <%= form.date_select :dateJoined, id: :admin_dateJoined %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phoneNum %>
+    <%= form.text_field :phoneNum, id: :admin_phoneNum %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

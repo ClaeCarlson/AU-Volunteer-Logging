@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hoursId: 1
+  hoursWorked: 9.99
+  weekWorked: 2017-11-13
+  volunteerId: 1
+
+two:
+  hoursId: 1
+  hoursWorked: 9.99
+  weekWorked: 2017-11-13
+  volunteerId: 1

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Volunteer Descriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Volunteerid</th>
+      <th>Infovolunteer</th>
+      <th>Datesavail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @volunteer_descriptions.each do |volunteer_description| %>
+      <tr>
+        <td><%= volunteer_description.volunteerId %></td>
+        <td><%= volunteer_description.infoVolunteer %></td>
+        <td><%= volunteer_description.datesAvail %></td>
+        <td><%= link_to 'Show', volunteer_description %></td>
+        <td><%= link_to 'Edit', edit_volunteer_description_path(volunteer_description) %></td>
+        <td><%= link_to 'Destroy', volunteer_description, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Volunteer Description', new_volunteer_description_path %>

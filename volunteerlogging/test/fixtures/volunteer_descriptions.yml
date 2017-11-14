@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  volunteerId: 1
+  infoVolunteer: MyString
+  datesAvail: 2017-11-13
+
+two:
+  volunteerId: 1
+  infoVolunteer: MyString
+  datesAvail: 2017-11-13

@@ -1,0 +1,2 @@
+class VolunteerDescription < ApplicationRecord
+end
