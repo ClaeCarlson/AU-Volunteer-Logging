@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20171114053135) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hours", primary_key: ["hoursId", "volunteerId"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "hoursId", null: false
-    t.decimal "hoursWorked", precision: 6, scale: 2, null: false
-    t.date "weekWorked", null: false
-    t.integer "volunteerId", null: false
-    t.index ["volunteerId"], name: "fk_hours_volunteers_idx"
+  create_table "hours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "hoursId"
+    t.decimal "hoursWorked", precision: 10
+    t.date "weekWorked"
+    t.integer "volunteerId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

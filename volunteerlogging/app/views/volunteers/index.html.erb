@@ -2,40 +2,63 @@
 
 <h1>Volunteers</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Volunteerid</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
+      <th id="volunteerId"  > Volunteer ID</th>
+      <th id="firstName" name-space="fistName">Firstname</th>
+      <th id="lastName">Lastname</th>
+      <th id="email">Email</th>
       <th>Encrypted password</th>
-      <th>Datejoined</th>
+      <th id="created_at">Datejoined</th>
       <th>Phonenum</th>
-      <th>Voltype</th>
+      <th id="volType">Voltype</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @volunteers.each do |volunteer| %>
-      <tr>
-        <td><%= volunteer.volunteerId %></td>
-        <td><%= volunteer.firstName %></td>
-        <td><%= volunteer.lastName %></td>
-        <td><%= volunteer.email %></td>
-        <td><%= volunteer.encrypted_password %></td>
-        <td><%= volunteer.dateJoined %></td>
-        <td><%= volunteer.phoneNum %></td>
-        <td><%= volunteer.volType %></td>
-        <td><%= link_to 'Show', volunteer %></td>
-        <td><%= link_to 'Edit', edit_volunteer_path(volunteer) %></td>
-        <td><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
 
+<div id="tby"></div>
 <br>
 
 <%= link_to 'New Volunteer', new_volunteer_path %>
+<script>
+
+  var data = <%= @volunteers.to_json.html_safe %>
+
+  function sortrows(cat, e ){
+
+  data.sort(function(a,b){
+    var a1 = a[cat], b1 = b[cat];
+    if(a1 == b1 ) return 0;
+    return a1 > b1? 1: -1;
+  });
+
+  var tbody = "";
+  $.each(data, function(key, obj){
+    
+    tbody +="<tr>";
+    tbody += "<td>"+ obj.volunteerId + "</td>";
+    tbody += "<td>"+ obj.firstName + "</td>";
+    tbody += "<td>"+ obj.lastName + "</td>";
+    tbody += "<td>"+ obj.email + "</td>";
+    tbody += "<td>"+ obj.encrypted_password + "</td>";
+    tbody += "<td>"+ obj.created_at + "</td>";
+    tbody += "<td>"+ obj.phoneNum + "</td>";
+    tbody += "<td>"+ obj.volType + "</td>";
+    tbody += "<td><a href='volunteers/"+ obj.id +"'>Show</a></td>";
+    tbody += "<td><a href='volunteers/edit/"+ obj.id +"'>Edit</a></td>";
+    tbody += "<td><a data-method='delete' href='volunteers/"+ obj.id +"'>Delete</a></td>";
+    tbody += "</tr>";
+  });
+  
+  $("tbody").html(tbody);
+  }
+
+  $("th").click(function(e){
+    sortrows(e.target.id);
+  });
+
+  sortrows("id");
+</script>

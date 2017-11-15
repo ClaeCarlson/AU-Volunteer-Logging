@@ -1,3 +1,8 @@
+
+
+  <div style= "margin-top:10%;" class = 'row '><div class='col-6 offset-3 text-center' ><h2>Register New Volunteer</h2></div></div>
+
+  
 <%= form_with(model: volunteer, local: true) do |form| %>
   <% if volunteer.errors.any? %>
     <div id="error_explanation">
@@ -11,47 +16,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :volunteerId %>
-    <%= form.number_field :volunteerId, id: :volunteer_volunteerId %>
+<br>
+  <form>
+  <div  class='row col-sm-9 offset-2'>
+  
+  <div class="form-group col-sm-2" >
+    <label >ID:</label>
+    <input class='form-control' type='text_field' <%= form.text_field :volunteerId, id: :volunteer_volunteerId %> 
   </div>
 
-  <div class="field">
-    <%= form.label :firstName %>
-    <%= form.text_field :firstName, id: :volunteer_firstName %>
+  <div class="form-group col-sm-4">
+    <label>First Name:</label>
+    <input class = 'form-control' type='text_field' <%= form.text_field :firstName, id: :volunteer_firstName %>
   </div>
 
-  <div class="field">
-    <%= form.label :lastName %>
-    <%= form.text_field :lastName, id: :volunteer_lastName %>
+  <div class="form-group col-sm-4">
+    <label>Last Name: </label>
+    <input class='form-control' type='text_field' <%= form.text_field :lastName, id: :volunteer_lastName %>
+  </div>
+  
+  <div class="form-group col-sm-4">
+    <label>Type:</label>
+    <input class='form-control' type='text_field' <%= form.text_field :volType, id: :volunteer_volType %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :volunteer_email %>
   </div>
-
-  <div class="field">
-    <%= form.label :encrypted_password %>
-    <%= form.text_field :encrypted_password, id: :volunteer_encrypted_password %>
+  <div class=" row col-sm-10">
+    <div class='col-2 offset-8'>
+    <button type = '<%= form.submit %>' class='btn '>Create </button>
   </div>
-
-  <div class="field">
-    <%= form.label :dateJoined %>
-    <%= form.date_select :dateJoined, id: :volunteer_dateJoined %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phoneNum %>
-    <%= form.text_field :phoneNum, id: :volunteer_phoneNum %>
-  </div>
-
-  <div class="field">
-    <%= form.label :volType %>
-    <%= form.text_field :volType, id: :volunteer_volType %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  </form>
 <% end %>
+
