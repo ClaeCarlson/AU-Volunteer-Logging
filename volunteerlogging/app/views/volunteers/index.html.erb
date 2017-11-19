@@ -1,28 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Volunteers</h1>
-
-<table class="table table-hover">
+<div class="jumbotron col-10 offset-1 ">
+<table class="table table-sm table-hover table-bordered table-responsive">
   <thead>
     <tr>
       <th id="volunteerId"  > Volunteer ID</th>
       <th id="firstName" name-space="fistName">Firstname</th>
       <th id="lastName">Lastname</th>
       <th id="email">Email</th>
-      <th>Encrypted password</th>
       <th id="created_at">Datejoined</th>
-      <th>Phonenum</th>
+      <th id="phoneNum">Phonenum</th>
       <th id="volType">Voltype</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
+  </tbody>
 </table>
+<%= link_to 'New Volunteer', new_volunteer_path %>
+</div>
 
-<div id="tby"></div>
 <br>
 
-<%= link_to 'New Volunteer', new_volunteer_path %>
+
 <script>
 
   var data = <%= @volunteers.to_json.html_safe %>
@@ -43,12 +44,11 @@
     tbody += "<td>"+ obj.firstName + "</td>";
     tbody += "<td>"+ obj.lastName + "</td>";
     tbody += "<td>"+ obj.email + "</td>";
-    tbody += "<td>"+ obj.encrypted_password + "</td>";
     tbody += "<td>"+ obj.created_at + "</td>";
     tbody += "<td>"+ obj.phoneNum + "</td>";
     tbody += "<td>"+ obj.volType + "</td>";
     tbody += "<td><a href='volunteers/"+ obj.id +"'>Show</a></td>";
-    tbody += "<td><a href='volunteers/edit/"+ obj.id +"'>Edit</a></td>";
+    tbody += "<td><a href='volunteers/"+ obj.id +"/edit'>Edit</a></td>";
     tbody += "<td><a data-method='delete' href='volunteers/"+ obj.id +"'>Delete</a></td>";
     tbody += "</tr>";
   });

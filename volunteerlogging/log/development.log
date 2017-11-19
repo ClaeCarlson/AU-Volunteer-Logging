@@ -3418,3 +3418,1481 @@ Processing by HoursController#new as HTML
 Completed 200 OK in 2131ms (Views: 1609.1ms | ActiveRecord: 8.0ms)
 
 
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-15 16:03:12 -0600
+  [1m[35m (28.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (299.2ms)
+  Rendered volunteers/new.html.erb within layouts/application (341.9ms)
+Completed 200 OK in 10313ms (Views: 10033.7ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-15 16:08:53 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.5ms)
+  Rendered volunteers/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 16854ms (Views: 16830.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/preston.jpg" for 127.0.0.1 at 2017-11-15 16:09:10 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/preston.jpg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/volunteers" for 127.0.0.1 at 2017-11-15 16:10:36 -0600
+Processing by VolunteersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "volunteer"=>{"volunteerId"=>"10", "firstName"=>"Travon", "lastName"=>"Royal", "volType"=>"Thunder"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (416.5ms)[0m  [1m[32mINSERT INTO `volunteers` (`volunteerId`, `firstName`, `lastName`, `volType`, `created_at`, `updated_at`) VALUES (10, 'Travon', 'Royal', 'Thunder', '2017-11-15 22:10:37', '2017-11-15 22:10:37')[0m
+  [1m[35m (95.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/12
+Completed 302 Found in 563ms (ActiveRecord: 512.0ms)
+
+
+Started GET "/volunteers/12" for 127.0.0.1 at 2017-11-15 16:10:37 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mVolunteer Load (25.9ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 12 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 412ms (Views: 236.9ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/images/preston.jpg" for 127.0.0.1 at 2017-11-15 16:10:38 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/preston.jpg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:10:53 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 239ms (Views: 208.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:11:49 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 8623ms (Views: 8567.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:13:14 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 8590ms (Views: 8550.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers/edit/7" for 127.0.0.1 at 2017-11-15 16:13:36 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/volunteers/edit/7"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:14:26 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 265ms (Views: 240.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:14:29 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 250ms (Views: 229.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:14:33 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 271ms (Views: 231.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:17:19 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 275ms (Views: 251.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:17:33 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 277ms (Views: 253.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:17:40 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 272ms (Views: 243.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:17:46 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 289ms (Views: 263.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:18:13 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 280ms (Views: 254.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:18:24 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 348ms (Views: 308.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:18:56 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 273ms (Views: 250.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:19:32 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 297ms (Views: 242.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:21:07 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 281ms (Views: 246.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:21:15 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.5ms)
+  Rendered volunteers/edit.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 274ms (Views: 247.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:21:30 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 413ms (Views: 368.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:21:44 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 298ms (Views: 265.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:21:56 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 295ms (Views: 257.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:22:02 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 289ms (Views: 259.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:22:22 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 255ms (Views: 227.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:22:44 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (1.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 286ms (Views: 234.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:26:18 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (3.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 294ms (Views: 269.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-15 16:26:24 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 287ms (Views: 262.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:27:03 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 231ms (Views: 209.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:27:25 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 251ms (Views: 230.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:27:50 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 240ms (Views: 220.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:28:18 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 270ms (Views: 223.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:28:55 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 281ms (Views: 236.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:29:07 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 293ms (Views: 249.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:29:54 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 262ms (Views: 220.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:30:46 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 235ms (Views: 208.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:31:10 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 250ms (Views: 226.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:31:33 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 272ms (Views: 247.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:31:48 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 249ms (Views: 225.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-15 16:36:02 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 252ms (Views: 222.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:48:36 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 254ms (Views: 227.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:49:41 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 235ms (Views: 212.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:50:20 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 249ms (Views: 224.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:51:13 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 234ms (Views: 212.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:52:25 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 303ms (Views: 279.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:53:02 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 269ms (Views: 244.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:53:36 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 247ms (Views: 222.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:55:00 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8810ms (Views: 8789.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:55:23 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7940ms (Views: 7917.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:55:54 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 224ms (Views: 203.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:56:48 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 250ms (Views: 207.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:57:17 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 237ms (Views: 214.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:57:49 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 259ms (Views: 213.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:57:59 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 237ms (Views: 213.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:58:06 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 253ms (Views: 226.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:58:18 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 237ms (Views: 213.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:59:00 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 262ms (Views: 215.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 16:59:11 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 367ms (Views: 330.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:00:30 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 239ms (Views: 212.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:01:12 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 293ms (Views: 227.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:01:23 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 246ms (Views: 223.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:01:36 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 235ms (Views: 210.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:01:48 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 304ms (Views: 270.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:02:00 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 332ms (Views: 290.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:02:36 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 225ms (Views: 200.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:02:47 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 305ms (Views: 267.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:03:12 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 224ms (Views: 197.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:03:51 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 231ms (Views: 206.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:04:05 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 266ms (Views: 217.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:04:30 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 246ms (Views: 226.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:06:03 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 256ms (Views: 231.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:06:20 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 382ms (Views: 345.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:06:38 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 260ms (Views: 235.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:06:58 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 270ms (Views: 215.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:07:08 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 246ms (Views: 223.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:07:44 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 258ms (Views: 235.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:07:49 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 226ms (Views: 201.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:08:14 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 285ms (Views: 243.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:08:21 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 273ms (Views: 249.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:09:49 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 260ms (Views: 236.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:10:00 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 236ms (Views: 211.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:10:11 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 244ms (Views: 217.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:10:26 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 255ms (Views: 231.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:10:33 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 281ms (Views: 259.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:10:54 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 226ms (Views: 205.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:11:28 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 288ms (Views: 267.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-15 17:11:44 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 325ms (Views: 276.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-17 09:19:58 -0600
+  [1m[35m (104.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 8506ms (Views: 8462.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 09:22:01 -0600
+Processing by VolunteersController#new as HTML
+  [1m[35m (4.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (368.2ms)
+  Rendered volunteers/new.html.erb within layouts/application (484.3ms)
+Completed 200 OK in 1173ms (Views: 857.3ms | ActiveRecord: 89.5ms)
+
+
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:22:27 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 334ms (Views: 260.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 09:23:00 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 372ms (Views: 297.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:38:23 -0600
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (4.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 920ms (Views: 832.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/volunteers/volunteers/10/edit" for 127.0.0.1 at 2017-11-17 09:39:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/volunteers/volunteers/10/edit"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:39:41 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mVolunteer Load (4.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 296ms (Views: 261.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/volunteers/volunteers/11/edit" for 127.0.0.1 at 2017-11-17 09:39:44 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/volunteers/volunteers/11/edit"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:39:53 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 245ms (Views: 224.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/volunteers/7" for 127.0.0.1 at 2017-11-17 09:40:40 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/volunteers/volunteers/7"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:40:51 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 249ms (Views: 222.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/volunteers/" for 127.0.0.1 at 2017-11-17 09:41:18 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 509ms (Views: 438.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7/edit" for 127.0.0.1 at 2017-11-17 09:41:22 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (48.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (19.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 502ms (Views: 339.4ms | ActiveRecord: 48.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:41:40 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 200ms (Views: 189.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/10/edit" for 127.0.0.1 at 2017-11-17 09:41:44 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/10/edit"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:41:54 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 248ms (Views: 219.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:42:22 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 405ms (Views: 335.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10/edit" for 127.0.0.1 at 2017-11-17 09:42:30 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (0.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 248ms (Views: 235.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:42:34 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 227ms (Views: 200.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/10" for 127.0.0.1 at 2017-11-17 09:42:35 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/10"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:42:42 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 264ms (Views: 243.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/7" for 127.0.0.1 at 2017-11-17 09:42:44 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/7"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:42:47 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (313.3ms)
+Completed 200 OK in 1863ms (Views: 1519.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:43:02 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 280ms (Views: 229.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/7" for 127.0.0.1 at 2017-11-17 09:43:05 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 7 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 289ms (Views: 228.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:43:09 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 238ms (Views: 219.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/11/edit" for 127.0.0.1 at 2017-11-17 09:43:12 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 11 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.5ms)
+  Rendered volunteers/edit.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 251ms (Views: 232.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:43:28 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 263ms (Views: 240.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10/edit" for 127.0.0.1 at 2017-11-17 09:43:35 -0600
+Processing by VolunteersController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/edit.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (0.0ms)
+  Rendered volunteers/edit.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 258ms (Views: 222.6ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:43:41 -0600
+Processing by VolunteersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "volunteer"=>{"volunteerId"=>"11", "firstName"=>"Luis", "lastName"=>"Leaguer", "volType"=>"Football"}, "id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  [1m[35m (24.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (205.6ms)[0m  [1m[33mUPDATE `volunteers` SET `volunteerId` = 11, `updated_at` = '2017-11-17 15:43:41' WHERE `volunteers`.`id` = 10[0m
+  [1m[35m (96.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/volunteers/10
+Completed 302 Found in 359ms (ActiveRecord: 325.9ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:43:41 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 412ms (Views: 346.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:44:42 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (1.5ms)
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:44:55 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 19406ms (Views: 19317.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 8669ms (Views: 8587.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:45:07 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 257ms (Views: 231.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:45:14 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 232ms (Views: 210.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:45:49 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7997ms (Views: 7913.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/10" for 127.0.0.1 at 2017-11-17 09:46:18 -0600
+Processing by VolunteersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 10 LIMIT 1[0m
+  Rendering volunteers/show.html.erb within layouts/application
+  Rendered volunteers/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 337ms (Views: 247.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 09:58:30 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 221ms (Views: 202.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 09:58:31 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 241ms (Views: 217.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 09:59:29 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 373ms (Views: 281.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:00:37 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (2.5ms)
+  Rendered volunteers/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 396ms (Views: 269.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:00:56 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 264ms (Views: 246.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:01:10 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 287ms (Views: 252.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:01:35 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (0.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 360ms (Views: 298.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:01:45 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (0.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 317ms (Views: 252.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:02:16 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (0.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 465ms (Views: 335.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:02:43 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 373ms (Views: 286.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:02:56 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 265ms (Views: 235.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:03:05 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (4.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 277ms (Views: 253.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers" for 127.0.0.1 at 2017-11-17 10:04:59 -0600
+Processing by VolunteersController#index as HTML
+  Rendering volunteers/index.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered volunteers/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 349ms (Views: 221.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-17 10:05:41 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (16.9ms)
+  Rendered volunteers/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 333ms (Views: 221.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:11:09 -0600
+  [1m[35m (260.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (131.6ms)
+Completed 200 OK in 9944ms (Views: 9875.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:17:58 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 321ms (Views: 233.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:18:52 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 311ms (Views: 229.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:19:00 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 251ms (Views: 223.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:19:19 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 265ms (Views: 241.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:19:26 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 240ms (Views: 215.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:19:59 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 365ms (Views: 297.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:21:03 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 305ms (Views: 239.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:21:19 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 276ms (Views: 248.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:21:40 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 272ms (Views: 211.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:21:50 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 272ms (Views: 205.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:22:43 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 328ms (Views: 270.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:25:10 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 305ms (Views: 229.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:26:44 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 241ms (Views: 213.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:36:24 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 487ms (Views: 392.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-18 18:36:29 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 250ms (Views: 234.3ms | ActiveRecord: 0.0ms)
+
+

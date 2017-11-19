@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <style>
+        button {
+            width: 100%;
+            height: 200px;
+            background-color: ;
+        }
+    </style>
+   <div id="Ndiv"  style="margin-top:30%; height:75%;" class="row col-10 offset-1">
+    <div id="Ndiv" class="col-6">
+        <button id="volun"  class="btn">
+            <h3 class="display-8">I am a Volunteer</h3>
+        </button>
+    </div>
+    <div id="Ndiv" class="col-6 ">
+        <button id="admin"   class="btn">
+            <h3 class="display-8">I am an Admin</h3>
+        </button>
+    </div>
+    </div>
+
+    <script>
+        $("button").click(function(e){
+            $("button").hide();
+            if(e.tager.id == "admin"){
+                $("#adminLogin").show();
+            }else{
+                $("#volunteerLogin").show();
+            }
+            
+        });
+
+    </script>
