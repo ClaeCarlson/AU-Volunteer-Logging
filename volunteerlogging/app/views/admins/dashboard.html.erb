@@ -1,0 +1,59 @@
+<style>
+button {
+    height: 200px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div id="container" style= "margin-top: 15%; " id="Ndiv" class="col-10 offset-1">
+        
+            <button id="volunteer" class = "btn btn-lrg col-5 ">
+               Volunteers
+            </button>
+        
+        
+            <button id="loghours" class = "btn btn-lrg col-5 offset-1">
+               Log Hours
+            </button>
+        
+        
+            <button id="register" class = "btn btn-lrg col-5">
+                Register Volunteers
+            </button>
+    
+      
+            <button id="reports" class = "btn btn-lrg col-5 offset-1">
+                Reports
+            </button>
+       
+</div>
+
+<script>
+
+$("button").click(function(e){
+    $("#container").hide();
+   switch(e.target.id){
+       case "volunteer":
+           window.location = "volunteers";
+           break;
+        case "loghours":
+           window.location = "/hours/new";
+           break;
+        case "register":
+           window.location = "register";
+           break;
+        case "reports":
+            window.location = "reports";
+            break;
+        case "empty":
+            $("#results").html(" ");
+            $("#container").show();
+            break;
+
+   }
+});
+</script>

@@ -1,0 +1,95 @@
+<style>
+.jumbotron {
+  margin-top: 10%;
+  background-color:white;
+}
+
+table{
+  margin-top: 5%;
+}
+</style>
+<p id="notice"><%= notice %></p>
+
+
+<div id ="" class="jumbotron col-10 offset-1 ">
+<div class="row">
+<h1 class="col-4 offset-4">Volunteers</h1>
+<input  id="search" class="form-control col-3 offset-1" type="search" placeholder="Search">
+</div>
+<table class="table table-sm table-hover table-responsive">
+  <thead>
+    <tr>
+      <th id="volunteerId"  > Volunteer ID</th>
+      <th id="firstName" >Firstname</th>
+      <th id="lastName">Lastname</th>
+      <th id="email">Email</th>
+      <th id="created_at">Datejoined</th>
+      <th id="phoneNum">Phonenum</th>
+      <th id="volType">Voltype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<%= link_to 'New Volunteer', new_volunteer_path %>
+</div>
+
+<br>
+
+
+<script>
+
+  var data = <%= @volunteers.to_json.html_safe %>
+
+  function sortrows(cat, e ){
+
+  data.sort(function(a,b){
+    var a1 = a[cat], b1 = b[cat];
+    if(a1 == b1 ) return 0;
+    return a1 > b1? 1: -1;
+  });
+
+  var tbody = "";
+  $.each(data, function(key, obj){
+    
+    tbody +="<tr class='trs'  id='"+ obj.volunteerId + "'>";
+    tbody += "<td>"+ obj.volunteerId + "</td>";
+    tbody += "<td id='firstName' value='"+ obj.firstName + "' >"+ obj.firstName + "</td>";
+    tbody += "<td id='lastName'>"+ obj.lastName + "</td>";
+    tbody += "<td>"+ obj.email + "</td>";
+    tbody += "<td>"+ obj.created_at + "</td>";
+    tbody += "<td>"+ obj.phoneNum + "</td>";
+    tbody += "<td>"+ obj.volType + "</td>";
+    tbody += "<td><a href='volunteers/"+ obj.id +"'>Show</a></td>";
+    tbody += "<td><a href='volunteers/"+ obj.id +"/edit'>Edit</a></td>";
+    tbody += "<td><a data-method='delete' href='volunteers/"+ obj.id +"'>Delete</a></td>";
+    tbody += "</tr>";
+  });
+  
+  $("tbody").html(tbody);
+
+  }
+
+$("#search").keyup(function(e){
+    $("table .trs").each(function(){
+      var str = $(this).children("#firstName").text().toLowerCase() + " " + $(this).children("#lastName").text().toLowerCase();
+   
+      var filter = e.target.value.toLowerCase();
+      
+      var res = str.match("(.*|\s?)"+filter+".*");
+      
+      if(res == null)
+        $(this).hide();
+      else
+        $(this).show();
+    });
+  });  
+
+  $("th").click(function(e){
+    sortrows(e.target.id);
+  });
+
+  
+  sortrows("id");
+</script>

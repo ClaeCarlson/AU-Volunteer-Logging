@@ -15,6 +15,7 @@ class HoursController < ApplicationController
   # GET /hours/new
   def new
     @hour = Hour.new
+    @volunteers = Volunteer.all
   end
 
   # GET /hours/1/edit

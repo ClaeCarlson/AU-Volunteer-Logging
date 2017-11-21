@@ -11,22 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :hoursId %>
-    <%= form.number_field :hoursId, id: :hour_hoursId %>
+<div class ="jumbotron col-10 offset-1 ">
+  <h1 class="col-4 offset-4">Log Hours</h1>
+  <br>
+    <h4 class="col-6 offset-2">Search by name or ID:</h4>
+    
+    <div class="row">
+    <input id="name" type="search" class="form-control   col-3 offset-2" placeholder="Enter Name">
+    <input id="id" type="search" class="form-control  col-2 offset-1 " placeholder="ID">
+    
+    </div>
+    
+  <div id="result" >
+    
   </div>
 
-  <div class="field">
-    <%= form.label :hoursWorked %>
-    <%= form.text_field :hoursWorked, id: :hour_hoursWorked %>
+  <div id="form1" >
+
+    <div class="field">
+    <%= form.label :hoursWork %>
+    <input type="text_field" id="hoursWorked" value="" class="form-control"  />
   </div>
+  
 
   <div class="field">
     <%= form.label :weekWorked %>
     <%= form.date_select :weekWorked, id: :hour_weekWorked %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :volunteerId %>
     <%= form.number_field :volunteerId, id: :hour_volunteerId %>
   </div>
@@ -34,4 +47,48 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+</div>
 <% end %>
+
+<script>
+  var data = <%= @volunteers.to_json.html_safe %>
+  $(document).ready(function(){
+ 
+
+  var list = "<ul id='mylist' class='list-unstyled'>";
+  $.each(data, function(key, obj){
+    list += "<li class='' id='"+ obj.firstName + " " + obj.lastName+ "' ><a class='btn' id=' "+ obj.firstName + "' href=''> "+ obj.firstName + " " + obj.lastName+ "</a></li>";
+  });
+  list +="</ul>";
+  
+  $("#result").html(list);
+  });
+
+
+  $("#name ").keyup(function(e){
+    $("#mylist li").each(function(){
+      var str = this.id.toLowerCase();
+   
+      var filter = e.target.value.toLowerCase();
+      var res = str.match(filter);
+      if(res == null)
+        $(this).hide();
+      else
+        $(this).show();
+    });
+  });
+
+$(".btn").click(function(e){
+  $("#form1").show();
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
