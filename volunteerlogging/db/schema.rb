@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114053135) do
+ActiveRecord::Schema.define(version: 20171119011203) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "adminId"
@@ -25,23 +25,28 @@ ActiveRecord::Schema.define(version: 20171114053135) do
   end
 
   create_table "hours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "hoursId"
+    t.integer "hour_id"
     t.decimal "hoursWorked", precision: 10
     t.date "weekWorked"
-    t.integer "volunteerId"
+    t.bigint "volunteer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["volunteer_id"], name: "index_hours_on_volunteer_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", null: false
-    t.string "encrypted_password", limit: 128, null: false
-    t.string "confirmation_token", limit: 128
-    t.string "remember_token", limit: 128, null: false
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["remember_token"], name: "index_users_on_remember_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "volunteer_descriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -52,15 +57,17 @@ ActiveRecord::Schema.define(version: 20171114053135) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "volunteers", primary_key: "volunteerId", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "firstName", limit: 25, null: false
-    t.string "lastName", limit: 25, null: false
-    t.string "email", null: false
-    t.string "encrypted_password", null: false
-    t.date "dateJoined", null: false
-    t.string "phoneNum", limit: 11
-    t.string "volType", limit: 25, null: false
+  create_table "volunteers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "volunteer_id"
+    t.string "firstName"
+    t.string "lastName"
+    t.string "email"
+    t.string "encrypted_password"
+    t.date "dateJoined"
+    t.string "phoneNum"
+    t.string "volType"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "hours", "volunteers", column: "volunteerId", primary_key: "volunteerId", name: "fk_hours_volunteers"
 end

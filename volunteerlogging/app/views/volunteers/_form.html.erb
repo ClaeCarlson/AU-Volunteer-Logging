@@ -1,8 +1,3 @@
-
-
-  <div style= "margin-top:10%;" class = 'row col-sm'><div class='col-6 offset-3 text-center' ><h2>Register New Volunteer</h2></div></div>
-
-  
 <%= form_with(model: volunteer, local: true) do |form| %>
   <% if volunteer.errors.any? %>
     <div id="error_explanation">
@@ -17,40 +12,53 @@
   <% end %>
 
 <br>
-  <form>
+  
   <div id="" class='jumbotron row  col-sm-9 offset-2'>
+    <div class="row col-12 ">
+      <h2 class="col-3 offset-4">Register/Edit</h2>
+    </div>
+    
+    <div>
+    <br>
+    <form>
+    <div class="row col-12">
+    <label class="col-3 text-right">ID:</label>
+    <%= form.text_field :volunteer_id, id: :volunteer_volunteer_id , :class=>"col-2 form-control"%> 
+    </div>
+    <br>
+    <div class="row col-12">
+    <label class="col-3 text-right">First Name:</label>
+    <%= form.text_field :firstName, id: :volunteer_firstName, :class=>"col-3 form-control" %>
   
-  <div id = "Ndiv" class="form-group col-sm-2" >
-    <label >ID:</label>
-    <input class='form-control' type='text_field' <%= form.text_field :volunteerId, id: :volunteer_volunteerId %> 
-  </div>
-
-  <div id="Ndiv" class="form-group col-sm-4">
-    <label>First Name:</label>
-    <input class = 'form-control' type='text_field' <%= form.text_field :firstName, id: :volunteer_firstName %>
-  </div>
-
-  <div id="Ndiv" class="form-group col-sm-4">
-    <label>Last Name: </label>
-    <input class='form-control' type='text_field' <%= form.text_field :lastName, id: :volunteer_lastName %>
-  </div>
-  
-  <div id="Ndiv" class="form-group col-sm-4">
-    <label>Type:</label>
-    <input class='form-control' type='text_field' <%= form.text_field :volType, id: :volunteer_volType %>
-  </div>
-  
+    <label class="col-3 text-right">Last Name: </label>
+    <%= form.text_field :lastName, id: :volunteer_lastName, :class=>"col-3 form-control" %>
+    </div>
+    <br>
+    <div class="row col-12">
+    <label class="col-3 text-right">Type:</label>
+    <%= form.text_field :volType, id: :volunteer_volType, :class=>"col-3 form-control" %>
+    <label class="col-3 text-right">Email:</label>
+    <%= form.email_field :email, id: :volunteer_email, :class=>"col-3 form-control" %>
+    </div>
+    <br>
+    <div class="row col-12">
+    <label class="col-3 text-right">Telephone:</label>
+    <%= form.telephone_field :phoneNum, id: :volunteer_phoneNum, :class=>"col-3 form-control" %>
+    </div>
   <br />
+    <div class="row col-12">
+    <label class="col-3 text-right">Date Joined:</label>
+    <%= form.date_field :dateJoined, id: :volunteer_dateJoined, :class=>"datepicker form-control col-4" %>
+    </div>
+  <br>
+  <div  class="row col-12">
   
-  <div id="Ndiv" class="row">
-  <div id="Ndiv">
-  <button type = '<%= form.submit %>' class='btn btn-sm '>Create </button>
-  </div>  
+  <%= form.submit :class=>"btn col-4 offset-1" %>
+  <%= link_to "Back", "/admins/dashboard", :class=>"btn col-3 offset-4" %>
+  
   </div>
-  </div>
-  
-  
-  
   </form>
+  </div>
+  
 <% end %>
 

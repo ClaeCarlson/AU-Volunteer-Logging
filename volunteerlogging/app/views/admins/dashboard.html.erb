@@ -1,33 +1,42 @@
 <style>
+background {
+    width: 100%;
+}
 button {
     height: 200px;
     width: 300px;
     margin-top: 20px;
+    background-color: white;
+    
+} h1 {
+    font-size: 25px;
 }
-
+button[name="report"], button[name="registers"] {
+    margin-top: 8%;
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-<div id="container" style= "margin-top: 15%; " id="Ndiv" class="col-10 offset-1">
+<div id="container" style= "margin-top: 10%; " id="Ndiv" class="col-10 offset-1 offset-lg-2">
         
-            <button id="volunteer" class = "btn btn-lrg col-5 ">
-               Volunteers
+            <button id="volunteer" class = "btn  col-5 col-lg-4">
+               <h1 id="volunteer" >Volunteers</h1>
             </button>
         
         
-            <button id="loghours" class = "btn btn-lrg col-5 offset-1">
-               Log Hours
+            <button id="loghours" class = "btn col-5  col-lg-4 offset-1 ">
+               <h1 id="loghours">Log Hours</h1>
             </button>
         
-        
-            <button id="register" class = "btn btn-lrg col-5">
-                Register Volunteers
+       
+            <button id="register" name="registers" class = "btn col-5 col-lg-4">
+                <h1 id="register">Register Volunteers</h1>
             </button>
     
       
-            <button id="reports" class = "btn btn-lrg col-5 offset-1">
-                Reports
+            <button id="reports" name="report" class = "btn btn-lrg col-5 col-lg-4 offset-1">
+                <h1 id="reports" >Reports</h1>
             </button>
        
 </div>

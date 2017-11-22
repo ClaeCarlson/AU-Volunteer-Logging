@@ -1,10 +1,11 @@
 class CreateHours < ActiveRecord::Migration[5.1]
   def change
     create_table :hours do |t|
-      t.integer :hoursId
+      t.integer :hour_id
       t.decimal :hoursWorked
       t.date :weekWorked
-      t.integer :volunteerId
+      t.integer :volunteer_id
+      t.belongs_to :volunteer, index: true
 
       t.timestamps
     end

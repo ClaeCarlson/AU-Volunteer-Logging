@@ -19,7 +19,7 @@ table{
 <table class="table table-sm table-hover table-responsive">
   <thead>
     <tr>
-      <th id="volunteerId"  > Volunteer ID</th>
+      <th id="volunteer_id"  > Volunteer ID</th>
       <th id="firstName" >Firstname</th>
       <th id="lastName">Lastname</th>
       <th id="email">Email</th>
@@ -32,7 +32,10 @@ table{
   <tbody>
   </tbody>
 </table>
-<%= link_to 'New Volunteer', new_volunteer_path %>
+<div class="row"> 
+<%= link_to 'New Volunteer', new_volunteer_path, :class=>"btn col-3"  %>
+<%= link_to 'Back', '/admins/dashboard', :class=>"btn col-2 offset-7"%>
+</div>
 </div>
 
 <br>
@@ -53,8 +56,8 @@ table{
   var tbody = "";
   $.each(data, function(key, obj){
     
-    tbody +="<tr class='trs'  id='"+ obj.volunteerId + "'>";
-    tbody += "<td>"+ obj.volunteerId + "</td>";
+    tbody +="<tr class='trs'  id='"+ obj.volunteer_id + "'>";
+    tbody += "<td>"+ obj.volunteer_id + "</td>";
     tbody += "<td id='firstName' value='"+ obj.firstName + "' >"+ obj.firstName + "</td>";
     tbody += "<td id='lastName'>"+ obj.lastName + "</td>";
     tbody += "<td>"+ obj.email + "</td>";

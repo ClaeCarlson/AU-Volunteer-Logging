@@ -1,3 +1,10 @@
+<style>
+.jumbotron {
+  background-color: white;
+  margin-top: 10%;
+}
+</style>
+
 <%= form_with(model: hour, local: true) do |form| %>
   <% if hour.errors.any? %>
     <div id="error_explanation">
@@ -21,49 +28,53 @@
     <input id="id" type="search" class="form-control  col-2 offset-1 " placeholder="ID">
     
     </div>
-    
+    <br>
   <div id="result" >
     
   </div>
-
+  
   <div id="form1" >
 
-    <div class="field">
-    <%= form.label :hoursWork %>
-    <input type="text_field" id="hoursWorked" value="" class="form-control"  />
-  </div>
-  
+    <div class="row">
+    <label class="col-3 text-right vcenter ">Volunteer ID: </label>
+    <%= form.number_field :volunteer_id, id: :hour_volunteer_id, :class=>"form-control col-1" %>
 
-  <div class="field">
-    <%= form.label :weekWorked %>
-    <%= form.date_select :weekWorked, id: :hour_weekWorked %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :volunteerId %>
-    <%= form.number_field :volunteerId, id: :hour_volunteerId %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <label class="col-3 text-right">Hours Worked:</label>
+      <%= form.text_field :hoursWorked, id: :hour_hoursWorked, :class=>"form-control col-1"%>
+    </div>
+    <br>
+    <div class="row">
+      <label class="col-3 text-right">Day Worked:</label>
+      <%= form.date_select :weekWorked, id: :hour_weekWorked, :class=>" form-control datepicker col-5"%>
+    </div>
+    <br>
+      
+      <%= form.submit  :class=>"btn col-2 offset-1" %>
+      <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-6"%>
 
 </div>
 <% end %>
 
 <script>
   var data = <%= @volunteers.to_json.html_safe %>
+  $("#")
   $(document).ready(function(){
- 
+  
 
   var list = "<ul id='mylist' class='list-unstyled'>";
   $.each(data, function(key, obj){
-    list += "<li class='' id='"+ obj.firstName + " " + obj.lastName+ "' ><a class='btn' id=' "+ obj.firstName + "' href=''> "+ obj.firstName + " " + obj.lastName+ "</a></li>";
+    list += "<li class='' id='"+ obj.firstName + " " + obj.lastName+ "' ><h3>"+ obj.id + "|<small> " + obj.firstName + " " + obj.lastName+ "</small></h3></li>";
   });
   list +="</ul>";
   
   $("#result").html(list);
+
+  $("#mylist li").each(function(){
+    $(this).hide();
   });
+  });
+  
+  
 
 
   $("#name ").keyup(function(e){
@@ -71,17 +82,22 @@
       var str = this.id.toLowerCase();
    
       var filter = e.target.value.toLowerCase();
-      var res = str.match(filter);
-      if(res == null)
-        $(this).hide();
+      var res = str.match("(.*|\s?)"+filter+".*");
+      if(e.target.value == "")
+        $("#result").hide();
       else
+        $("#result").show();
+      if(res != null)
         $(this).show();
+      else
+        $(this).hide();
     });
   });
 
-$(".btn").click(function(e){
-  $("#form1").show();
+$("h3").click(function(e){
+ alert(e.target.value);
 });
+
 </script>
 
 

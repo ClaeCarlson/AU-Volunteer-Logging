@@ -1,7 +1,7 @@
 class CreateVolunteers < ActiveRecord::Migration[5.1]
   def change
     create_table :volunteers do |t|
-      t.integer :volunteerId
+      t.integer :volunteer_id
       t.string :firstName
       t.string :lastName
       t.string :email

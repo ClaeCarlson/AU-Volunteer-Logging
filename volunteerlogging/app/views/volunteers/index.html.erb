@@ -5,7 +5,7 @@
 <table class="table table-sm table-hover table-bordered table-responsive">
   <thead>
     <tr>
-      <th id="volunteerId"  > Volunteer ID</th>
+      <th id="volunteer_id"  > Volunteer ID</th>
       <th id="firstName" name-space="fistName">Firstname</th>
       <th id="lastName">Lastname</th>
       <th id="email">Email</th>
@@ -40,7 +40,7 @@
   $.each(data, function(key, obj){
     
     tbody +="<tr>";
-    tbody += "<td>"+ obj.volunteerId + "</td>";
+    tbody += "<td>"+ obj.volunteer_id + "</td>";
     tbody += "<td>"+ obj.firstName + "</td>";
     tbody += "<td>"+ obj.lastName + "</td>";
     tbody += "<td>"+ obj.email + "</td>";
