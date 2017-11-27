@@ -1,0 +1,112 @@
+<style>
+    .jumbotron {
+        margin-top: 10%;
+        background-color: white;
+    }
+
+    
+</style>
+
+
+<div class="jumbotron col-10 offset-1">
+    <div class="row col-12">
+        <h1 class="col-4 offset-4">Reports</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6" style="height:400px; width:500px;">
+            <canvas id="hoursPerMonth" width="400" height="400"></canvas>
+        </div>
+
+        <div class="col-6" style="height:400px ">
+            <canvas id="amountSaved" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <div class="row col-12">
+        <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-10"%>
+    </div>
+</div>
+
+
+<script>
+var ctx = document.getElementById('hoursPerMonth').getContext('2d');
+var nums = <%= @amountSaved.to_json.html_safe %>
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        datasets: [{
+            label: "Hours",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: nums
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        title:{
+            display:true,
+            text:'Hours Per Month' 
+        },
+        scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+    }
+});
+
+ctx = document.getElementById('amountSaved').getContext('2d');
+chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        datasets: [{
+            label: "Money",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            fill: false,
+            pointRadius: 10,
+            pointHoverRadius: 15,
+            showLine: false,
+            data: nums
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        responsive: true,
+        title:{
+            display:true,
+            text:'Money Saved (hour * $23)' 
+        },
+        legend: {
+            display: true
+        },
+        elements: {
+            point: {
+                pointStyle: "triangle",
+            }
+        },
+        scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+    }
+});
+
+
+</script>

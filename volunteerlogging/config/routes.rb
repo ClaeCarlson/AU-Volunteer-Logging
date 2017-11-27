@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete 'admins/volunteers/:id', to: 'volunteers#destroy'
   get 'admins/log_hours', to: 'hours#new'
   get 'admins/register', to: 'volunteers#new'
+  get 'admins/reports', to: 'reports#reports'
   resources :admins
   resources :volunteer_descriptions
   resources :volunteers
