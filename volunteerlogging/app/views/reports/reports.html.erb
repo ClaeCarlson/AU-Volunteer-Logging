@@ -31,7 +31,7 @@
 
 <script>
 var ctx = document.getElementById('hoursPerMonth').getContext('2d');
-var nums = <%= @amountSaved.to_json.html_safe %>
+var nums = <%= @monthNums.to_json.html_safe %>
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
@@ -64,6 +64,7 @@ var chart = new Chart(ctx, {
 });
 
 ctx = document.getElementById('amountSaved').getContext('2d');
+nums = <%= @amountSaved.to_json.html_safe %>
 chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
