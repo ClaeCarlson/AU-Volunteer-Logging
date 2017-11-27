@@ -11,22 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :volunteerId %>
-    <%= form.number_field :volunteerId, id: :volunteer_description_volunteerId %>
+  <br>
+
+  <div id="" class="jumbotron row col-sm-9 offset-2">
+    <div class="row col-12">
+      <h2 class="col-3 offset-4">Descriptions</h2>
+    </div>
+
+    <div>
+      <br>
+      <form>
+        <div class="row col-12">
+          <label class="col-3 text-right">ID:</label>
+          <%= form.text_field :volunteerId, id: :volunteer_description_volunteerId,
+           :class=>"col-2 form-control" %>
+        
+        
+        
+          <label class="col-2 text-right">Date Available:</label>
+          <%= form.date_select :datesAvail, id: :volunteer_description_datesAvail, :class=>"col-2 form-control" %>
+        </div>
+        <br>
+        <div class="row col-12">
+          <label class="col-3 text-right">Extra Info:</label>
+          <%= form.text_area :infoVolunteer, id: :volunteer_description_infoVolunteer, :class=>"col-9 form-control" %>
+        </div>
+        <br>
+
+        <div class="row col-12">
+
+        <%= form.submit :class=>"btn col-5 offset-1" %>
+        <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-3" %>
+      </div>
+      </form>
+    </div>
+    
   </div>
 
-  <div class="field">
-    <%= form.label :infoVolunteer %>
-    <%= form.text_field :infoVolunteer, id: :volunteer_description_infoVolunteer %>
-  </div>
 
-  <div class="field">
-    <%= form.label :datesAvail %>
-    <%= form.date_select :datesAvail, id: :volunteer_description_datesAvail %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
