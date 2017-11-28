@@ -13,18 +13,20 @@
     </div>
     <div id="Ndiv" class="col-6 ">
         <button id="admin"   class="btn">
-            <h3 class="display-8">I am an Admin</h3>
+            <h3 id="admin" class="display-8">I am an Admin</h3>
         </button>
     </div>
     </div>
 
+    <div id="adminLogin">
+    </div>
     <script>
         $("button").click(function(e){
             $("button").hide();
-            if(e.tager.id == "admin"){
-                $("#adminLogin").show();
+            if(e.target.id == "admin"){
+                window.location = "/admins/sign_in";
             }else{
-                $("#volunteerLogin").show();
+                window.location = "/volunteers/sign_in";
             }
             
         });

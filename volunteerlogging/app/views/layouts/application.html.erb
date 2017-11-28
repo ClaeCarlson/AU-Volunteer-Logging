@@ -10,7 +10,13 @@
  </head>
 
   <body>
-
+   <% if admin_signed_in? %>
+    <%= link_to "logout", destroy_admin_session_path, method: :delete, :class=>"btn col-2 offset-10", :style=>"background-color: white;" %>
+    <%= current_admin.id %>
+    <% elsif volunteer_signed_in? %>
+    <%= link_to "logout", destroy_volunteer_session_path, method: :delete, :class=>"btn col-2 offset-10", :style=>"background-color: white;" %>
+    
+    <% end %>
     <%= yield %>
   </body>
 </html>

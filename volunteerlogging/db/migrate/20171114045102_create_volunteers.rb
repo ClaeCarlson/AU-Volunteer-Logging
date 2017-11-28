@@ -4,8 +4,7 @@ class CreateVolunteers < ActiveRecord::Migration[5.1]
       t.integer :volunteer_id
       t.string :firstName
       t.string :lastName
-      t.string :email
-      t.string :encrypted_password
+    
       t.date :dateJoined
       t.string :phoneNum
       t.string :volType

@@ -1,4 +1,5 @@
 class VolunteersController < ApplicationController
+  before_action :authorize_admin, only: :create
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
 
   # GET /volunteers
@@ -10,6 +11,9 @@ class VolunteersController < ApplicationController
   # GET /volunteers/1
   # GET /volunteers/1.json
   def show
+  end
+
+  def home
   end
 
   # GET /volunteers/new

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" , registrations: "admins/registrations"}
+  devise_for :volunteers, path: 'volunteers', controllers: { sessions: "volunteers/sessions" , registrations: "volunteers/registrations"}
+  
   root 'pages#home'
   get 'pages/home'
 
   get 'pages/about'
-
+  get 'volunteers/home', to: 'volunteers#home'
   get 'admins/dashboard', to: 'admins#dashboard'
   get 'admins/volunteers', to: 'admins#volunteers'
   get 'admins/volunteers/:id', to: 'volunteers#show'
