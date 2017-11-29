@@ -33425,3 +33425,2163 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 362ms (Views: 320.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 00:00:11 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 502ms (Views: 445.9ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 00:00:14 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZdJCheEUhBo6r36/Hbj7P9Xd6OPwIwdcuBdriJkzVAnjlZNp/VkIaftup71aYBJbn3NROilPkoV2C6Xhh/jUAw==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (43.2ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 06:00:14', `last_sign_in_at` = '2017-11-29 05:58:08', `sign_in_count` = 51, `updated_at` = '2017-11-29 06:00:14' WHERE `admins`.`id` = 1[0m
+  [1m[35m (112.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 366ms (ActiveRecord: 155.9ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 00:00:14 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 382ms (Views: 326.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admins/volunteers" for 127.0.0.1 at 2017-11-29 00:00:18 -0600
+Processing by AdminsController#volunteers as HTML
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/volunteers.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered admins/volunteers.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 444ms (Views: 353.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/volunteers/new" for 127.0.0.1 at 2017-11-29 00:00:20 -0600
+Processing by VolunteersController#new as HTML
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (6.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (33.0ms)
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 370ms (Views: 305.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/volunteers" for 127.0.0.1 at 2017-11-29 00:00:23 -0600
+Processing by VolunteersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hM6c8MFYx8Zj4tNVi1nwG2/5tnm8gg/DQOP7KIa9AVnsW4Aiam7BV+2j4YYY3W4QGrgcnqb73eSejloB16GTqA==", "volunteer"=>{"volunteer_id"=>"", "firstName"=>"", "lastName"=>"", "volType"=>"", "email"=>"", "phoneNum"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "dateJoined"=>""}, "commit"=>"Create"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering volunteers/new.html.erb within layouts/application
+  Rendered volunteers/_form.html.erb (6.0ms)
+  Rendered volunteers/new.html.erb within layouts/application (29.0ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 373ms (Views: 358.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/volunteers" for 127.0.0.1 at 2017-11-29 00:01:20 -0600
+Processing by VolunteersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMPtuK/rbHbkmSQjpqQ6+LVUiE+cr73MrlwN+VBvJZ07N2c/1vI8Nxrq/fD4jBVFpbicwzepwyHKzlEJ+E7wyg==", "volunteer"=>{"volunteer_id"=>"12345", "firstName"=>"Travon", "lastName"=>"Royal", "volType"=>"Football", "email"=>"Ro99yalTra31@gmail.com", "phoneNum"=>"8474181402", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "dateJoined"=>"2017-11-06"}, "commit"=>"Create"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `volunteers` WHERE `volunteers`.`email` = BINARY 'ro99yaltra31@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (34.0ms)[0m  [1m[32mINSERT INTO `volunteers` (`volunteer_id`, `firstName`, `lastName`, `dateJoined`, `phoneNum`, `volType`, `created_at`, `updated_at`, `email`, `encrypted_password`) VALUES (12345, 'Travon', 'Royal', '2017-11-06', '8474181402', 'Football', '2017-11-29 06:01:20', '2017-11-29 06:01:20', 'ro99yaltra31@gmail.com', '$2a$11$HhIh/B8YIvFmuDVTaL1FUOz34kXz59BtrwwNQt.tbKinU.Li0AFYW')[0m
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/volunteers
+Completed 302 Found in 303ms (ActiveRecord: 75.6ms)
+
+
+Started GET "/admins/volunteers" for 127.0.0.1 at 2017-11-29 00:01:20 -0600
+Processing by AdminsController#volunteers as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/volunteers.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered admins/volunteers.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 356ms (Views: 322.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 00:06:11 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 390ms (Views: 300.6ms | ActiveRecord: 27.5ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 00:06:15 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FqDANIjhpeLgNHCpSri4f1tfIgSfYI9uMlUjfkOPKE2lVEqz8fj1ox5HqXoUkJfCS7M2iDRm8YNWx3+O6679Gg=="}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 00:06:15 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 373ms (Views: 341.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 00:06:17 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 468ms (Views: 466.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 00:06:23 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ycmHUkIlsFbhdRaOLgcU7isf3UwZqgJjtZ7hOpval+fA2eVbXnhqRHTqDA2GYZC1fRLfcjjWM+e6NTOg5Mx4QQ==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.0ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 06:06:24', `last_sign_in_at` = '2017-11-29 06:00:14', `sign_in_count` = 52, `updated_at` = '2017-11-29 06:06:24' WHERE `admins`.`id` = 1[0m
+  [1m[35m (64.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 302ms (ActiveRecord: 82.7ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 00:06:24 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 310ms (Views: 272.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2017-11-29 00:06:27 -0600
+Processing by ReportsController#reports as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT `hours`.* FROM `hours`[0m
+  Rendering reports/reports.html.erb within layouts/application
+  Rendered reports/reports.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 385ms (Views: 325.9ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 00:07:52 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Pkv5PHh/Hgf55AIAD66qvYxrdA4qdfJHfVfE30Vap25iAGMSd9ueR+UWn+JzmLQeSThPqwxIjaIkpoUeyiirQ=="}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 00:07:52 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 488ms (Views: 428.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:44:17 -0600
+  [1m[35m (70.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (25.9ms)
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 13:44:26 -0600
+Completed 200 OK in 82762ms (Views: 82691.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (14.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (15.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (20.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (93.9ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (108.6ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (9.0ms)
+Completed 200 OK in 5125ms (Views: 1328.3ms | ActiveRecord: 124.4ms)
+
+
+Started GET "/super_admin/admin?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:46:40 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY admins.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (172.2ms)
+Completed 200 OK in 384ms (Views: 372.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/super_admin/hour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:46:43 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"hour"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (32.9ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (405.4ms)
+Completed 200 OK in 546ms (Views: 502.0ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/super_admin/volunteer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:46:59 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (165.7ms)
+Completed 200 OK in 362ms (Views: 338.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/hour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:03 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"hour"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (151.7ms)
+Completed 200 OK in 276ms (Views: 271.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin/hour?model_name=hour&sort=hour_id&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:06 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour", "sort"=>"hour_id", "_pjax"=>"[data-pjax-container]"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (65.6ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.hour_id asc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (2, 8, 1, 11, 23)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (218.2ms)
+Completed 200 OK in 365ms (Views: 284.3ms | ActiveRecord: 66.6ms)
+
+
+Started GET "/super_admin/hour?model_name=hour&sort=hour_id&sort_reverse=true&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:07 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour", "sort"=>"hour_id", "sort_reverse"=>"true", "_pjax"=>"[data-pjax-container]"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (12.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.hour_id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (1, 2, 8, 11, 23)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (193.3ms)
+Completed 200 OK in 323ms (Views: 295.7ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/super_admin/hour?model_name=hour&sort=hour_id&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:08 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour", "sort"=>"hour_id", "_pjax"=>"[data-pjax-container]"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.hour_id asc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (2, 8, 1, 11, 23)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (152.0ms)
+Completed 200 OK in 271ms (Views: 274.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin/hour?model_name=hour&sort=volunteer&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:18 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour", "sort"=>"volunteer", "_pjax"=>"[data-pjax-container]"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.volunteer_id asc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (1, 2, 8, 11, 23)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (168.9ms)
+Completed 200 OK in 315ms (Views: 292.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin/hour?model_name=hour&sort=volunteer&sort_reverse=true&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:20 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour", "sort"=>"volunteer", "sort_reverse"=>"true", "_pjax"=>"[data-pjax-container]"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (2.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.volunteer_id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 8, 2, 1)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (188.8ms)
+Completed 200 OK in 316ms (Views: 304.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/super_admin/admin?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:51 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY admins.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (114.7ms)
+Completed 200 OK in 242ms (Views: 237.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/volunteer_description?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:53 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer_description"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY volunteer_descriptions.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (130.0ms)
+Completed 200 OK in 266ms (Views: 244.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/admin?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:47:59 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY admins.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (117.8ms)
+Completed 200 OK in 291ms (Views: 274.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/super_admin/?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 13:48:04 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (37.0ms)
+Completed 200 OK in 763ms (Views: 717.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:49:22 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 436ms (Views: 396.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:26 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.5ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (176.2ms)
+Completed 200 OK in 822ms (Views: 787.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:29 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JDKRku59rW9NVrGcuXPUHfde/0efrfxzsWbUsOILwNCEIkjDojJyv/4sWodH5w5s7sOFEYkzgUu5rspflWHt1w==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (33.8ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 108ms (ActiveRecord: 33.8ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JDKRku59rW9NVrGcuXPUHfde/0efrfxzsWbUsOILwNCEIkjDojJyv/4sWodH5w5s7sOFEYkzgUu5rspflWHt1w==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 1012ms (Views: 590.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:33 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fcomXq8sooZel+k5O+jNeyjYaUCsEy6TE3NrjlSY0LDd2v8P42N9Vu3tAiLFfBcKMUUTFrqNU6sbu3VhI/L9tw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fcomXq8sooZel+k5O+jNeyjYaUCsEy6TE3NrjlSY0LDd2v8P42N9Vu3tAiLFfBcKMUUTFrqNU6sbu3VhI/L9tw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 842ms (Views: 644.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:37 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G7DeMqpF1NaSpOzKl5jWYmfVUtCjT9uMjlaTheRorxa7oAdj5goLBiHeB9FpDAwTfkgohrXRprSGno1qkwKCEQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.5ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G7DeMqpF1NaSpOzKl5jWYmfVUtCjT9uMjlaTheRorxa7oAdj5goLBiHeB9FpDAwTfkgohrXRprSGno1qkwKCEQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.5ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 841ms (Views: 642.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:39 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OHawHZHn4lhv8XYO6iO+bv0CmOXmH6XOXbDA17fgbSqYZmlM3ag9iNyLnRUUt2Qf5J/is/CB2PZVeN44wIpALQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 8ms (ActiveRecord: 1.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OHawHZHn4lhv8XYO6iO+bv0CmOXmH6XOXbDA17fgbSqYZmlM3ag9iNyLnRUUt2Qf5J/is/CB2PZVeN44wIpALQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 832ms (Views: 604.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:43 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 656ms (Views: 653.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:46 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKpn08ZueWLa3ANED2Jas/9A2Kf/9y0gAwF5OQl5DLwMur6CiiGmsmmm6F/x9oDC5t2i8elpUBgLyWfWfhMhuw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKpn08ZueWLa3ANED2Jas/9A2Kf/9y0gAwF5OQl5DLwMur6CiiGmsmmm6F/x9oDC5t2i8elpUBgLyWfWfhMhuw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 810ms (Views: 609.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:49:57 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 694ms (Views: 692.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:50:00 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uPAAPkOi2oMlVeWys7Z79I5Du5CWry5WdBPUch51LpIY4NlvD+0FU5YvDqlNIqGFl97BxoAxU25828qdaR8DlQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 9ms (ActiveRecord: 1.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uPAAPkOi2oMlVeWys7Z79I5Du5CWry5WdBPUch51LpIY4NlvD+0FU5YvDqlNIqGFl97BxoAxU25828qdaR8DlQ==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 941ms (Views: 716.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:50:05 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"advrnN4/gWriW03A/27JcdpKgZ5L6QXyF5iuNP1m6zjJyzLNknBeulEhptsB+hMAw9f7yF13eMofULDbigzGPw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'royaltra31@gmail.com' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 5ms (ActiveRecord: 1.0ms)
+
+
+Processing by Admins::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"advrnN4/gWriW03A/27JcdpKgZ5L6QXyF5iuNP1m6zjJyzLNknBeulEhptsB+hMAw9f7yF13eMofULDbigzGPw==", "admin"=>{"email"=>"RoyalTra31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.5ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 1107ms (Views: 875.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:50:16 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qHSOshobLKlJLjsmUe7iOlr+aTQibGOLeGIEopIYIPYIZFfjVlTzefpU0D2vejhLQ2MTYjTyHrNwqhpN5XIN8Q==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (31.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 19:50:17', `last_sign_in_at` = '2017-11-29 06:06:24', `sign_in_count` = 53, `updated_at` = '2017-11-29 19:50:17' WHERE `admins`.`id` = 1[0m
+  [1m[35m (85.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 346ms (ActiveRecord: 118.5ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 13:50:17 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 407ms (Views: 346.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 13:50:35 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7LtJf8olW9hzsQcYuR6E+oEeCLs1YF8VvSReaowbX75/gMY29JPTKTqriodkgwho+GqA9AMtBUEmAAfqsXEetw=="}
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 90ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:50:35 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 469ms (Views: 421.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:50:38 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 658ms (Views: 656.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:50:40 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dc/V5wPPnHFe9EJAcz/xKL8jLA2CWIQK4o7zOUDR/40Zpu/CTtt/4zKBntHC3NXu8ysvN5sONtcXMO/HKInCBA==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 19:50:40', `last_sign_in_at` = '2017-11-29 19:50:17', `sign_in_count` = 54, `updated_at` = '2017-11-29 19:50:40' WHERE `admins`.`id` = 1[0m
+  [1m[35m (47.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 274ms (ActiveRecord: 48.6ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 13:50:41 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 414ms (Views: 374.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 13:50:53 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (31.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.5ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (21.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (67.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 938ms (Views: 853.2ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:50:59 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 488ms (Views: 440.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 13:51:03 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U8Ditm5QzJlsJhccb1YwYqxXeXv8r/fI7HauvzT9/bh2+IqhqK2SKPFu15zB9spvia13jzxXhi4oRZAgwNcEcA=="}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:51:03 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 421ms (Views: 377.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 13:51:11 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (17.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (66.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 1057ms (Views: 1023.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 13:53:03 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 413ms (Views: 383.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:53:12 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (2.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 642ms (Views: 614.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 13:53:16 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MvzgOvAORNts988pYDP1n4/V3VZYEXptuW/x1mcA5UoFyN+fGBijQpfsSPVTprbZphc1VSkMk8CKgSHaEwbTRg==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 19:53:16', `last_sign_in_at` = '2017-11-29 19:50:40', `sign_in_count` = 55, `updated_at` = '2017-11-29 19:53:16' WHERE `admins`.`id` = 1[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 252ms (ActiveRecord: 40.1ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 13:53:16 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 444ms (Views: 401.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2017-11-29 13:53:21 -0600
+Processing by ReportsController#reports as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT `hours`.* FROM `hours`[0m
+  Rendering reports/reports.html.erb within layouts/application
+  Rendered reports/reports.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 518ms (Views: 377.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 13:53:26 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 400ms (Views: 337.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 14:06:25 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.1ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (16.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (72.6ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (12.9ms)
+Completed 200 OK in 1132ms (Views: 1044.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/super_admin/admin/export?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 14:06:36 -0600
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax (40.7ms)
+Completed 200 OK in 979ms (Views: 953.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/super_admin/admin/export?_pjax=%5Bdata-pjax-container%5D&all=true&model_name=admin" for 127.0.0.1 at 2017-11-29 14:06:53 -0600
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"25dWhVOM4tzxMCyA4CMqU/RV2AVvovVixlNl1G2c+ReOx4TD1BLhdd4+CP3fLSMngqaFrveMrDqJoiG99MsLxg==", "send_data"=>"true", "all"=>"true", "schema"=>{"only"=>["id", "admin_id", "firstName", "lastName", "dateJoined", "phoneNum", "created_at", "updated_at", "email", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip"]}, "csv_options"=>{"encoding_to"=>"", "generator"=>{"col_sep"=>","}}, "return_to"=>"http://localhost:3000/super_admin", "xml"=>"", "_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT `admins`.* FROM `admins` ORDER BY admins.id desc[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data admin_2017-11-29_14h06m53.xml (13.0ms)
+Completed 200 OK in 48ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:29:22 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1086ms (Views: 1017.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 15:29:25 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kgA9BHpwdqHR+fDtjsHS3l4fFhMw3V0Jt8+qpDUnNVi/O08LlI9yxMey4RxOYVVrYmeFCxDRtJ8GkULsXX9Cbw=="}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:29:25 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 471ms (Views: 426.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:29:30 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (25.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (87.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 2282ms (Views: 2230.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:29:37 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 543ms (Views: 489.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:31:55 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 516ms (Views: 441.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:32:04 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (18.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (71.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (7.0ms)
+Completed 200 OK in 991ms (Views: 962.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:32:09 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 541ms (Views: 482.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:33:10 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 454ms (Views: 419.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:33:18 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (18.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (71.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (5.0ms)
+Completed 200 OK in 988ms (Views: 952.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:34:09 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 580ms (Views: 528.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:39:25 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 410ms (Views: 373.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:39:34 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.5ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (22.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (74.2ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 1004ms (Views: 966.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:39:38 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 546ms (Views: 513.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:51:37 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 513ms (Views: 482.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:51:47 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (20.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (74.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (12.0ms)
+Completed 200 OK in 1056ms (Views: 1017.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:51:52 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 491ms (Views: 443.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:53:54 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 475ms (Views: 443.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:54:01 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (20.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (67.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 1007ms (Views: 979.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:54:05 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 668ms (Views: 632.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:58:10 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 435ms (Views: 411.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 15:58:15 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 1018ms (Views: 998.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 15:58:17 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XzbJYyCsJlWFO8qGRNlrcVUwYClydTCcqk58HidoEDmySfNWrO5wGchocUCNE6SFdeycwMPSpAChC8V1jlz6qw==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (53.3ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 21:58:18', `last_sign_in_at` = '2017-11-29 19:53:16', `sign_in_count` = 56, `updated_at` = '2017-11-29 21:58:18' WHERE `admins`.`id` = 1[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 357ms (ActiveRecord: 130.6ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 15:58:18 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 573ms (Views: 363.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 15:58:24 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (26.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (81.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (8.5ms)
+Completed 200 OK in 1296ms (Views: 1268.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 15:58:28 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 841ms (Views: 790.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:01:15 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 474ms (Views: 446.7ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-11-29 16:01:17 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z3M/Zn/rp/xfZ6khib6DW3PdZiDKwQAInLkElOOHfJtCTw2Fxk78dEFNl45b5C8R9gHvzI2yg9OZUfCVbv+QTQ=="}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:01:18 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 416ms (Views: 384.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 16:01:23 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (19.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (68.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.5ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (25.5ms)
+Completed 200 OK in 1052ms (Views: 942.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:01:29 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 507ms (Views: 479.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:03:25 -0600
+  [1m[35m (40.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (14.5ms)
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 16:03:36 -0600
+Completed 200 OK in 12341ms (Views: 12302.0ms | ActiveRecord: 0.0ms)
+
+
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 16:03:54 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (139.9ms)
+Completed 200 OK in 825ms (Views: 761.9ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:04:01 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 399ms (Views: 367.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 16:04:04 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 510ms (Views: 479.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 16:04:10 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-11-29 16:04:10 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.5ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 638ms (Views: 635.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-11-29 16:04:21 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iBDwdbyl7V2D7N4LFJIa37pf5/1KM1Ns9Sl/IuxcDLQdje0NL75D4VyElg677sGeqEuL9tpJT4LN/6NEhcvVqw==", "admin"=>{"email"=>"troyal01@aoura.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aoura.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (47.0ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-11-29 22:04:21', `last_sign_in_at` = '2017-11-29 21:58:18', `sign_in_count` = 57, `updated_at` = '2017-11-29 22:04:21' WHERE `admins`.`id` = 1[0m
+  [1m[35m (300.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 1080ms (ActiveRecord: 348.2ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-11-29 16:04:22 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 436ms (Views: 386.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 16:04:31 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (55.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (31.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (104.6ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+Completed 200 OK in 7201ms (Views: 3216.1ms | ActiveRecord: 34.1ms)
+
+
+Started GET "/super_admin/admin/1/edit" for 127.0.0.1 at 2017-11-29 16:04:48 -0600
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"model_name"=>"admin", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (10.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_submit_buttons.html.haml (10.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/application (1502.8ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (79.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (19.0ms)
+Completed 200 OK in 2667ms (Views: 2648.1ms | ActiveRecord: 2.0ms)
+
+
+Started PUT "/super_admin/admin/1/edit" for 127.0.0.1 at 2017-11-29 16:06:06 -0600
+Processing by RailsAdmin::MainController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mkO6yudqXLLTAX+qNvvVnhKHZoRtkzk3cW5PDsCuXlTMLTuQQAHCyuU0EUH8YHO4bPOt3uHUQM4rw3HbVmKB6g==", "admin"=>{"admin_id"=>"", "firstName"=>"Travon", "lastName"=>"Royal", "dateJoined"=>"November 14, 2017", "phoneNum"=>"8474181402", "email"=>"troyal01@aurora.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "reset_password_sent_at"=>"[FILTERED]", "remember_created_at"=>"", "sign_in_count"=>"57", "current_sign_in_at"=>"November 29, 2017 22:04", "last_sign_in_at"=>"November 29, 2017 21:58", "current_sign_in_ip"=>"127.0.0.1", "last_sign_in_ip"=>"127.0.0.1"}, "return_to"=>"http://localhost:3000/super_admin", "_save"=>"", "model_name"=>"admin", "id"=>"1"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdmin Exists (39.6ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`email` = BINARY 'troyal01@aurora.edu' AND (`admins`.`id` != 1) LIMIT 1[0m
+  [1m[35mSQL (13.0ms)[0m  [1m[33mUPDATE `admins` SET `firstName` = 'Travon', `lastName` = 'Royal', `dateJoined` = '2017-11-14', `phoneNum` = '8474181402', `email` = 'troyal01@aurora.edu', `current_sign_in_at` = '2017-11-29 22:04:00', `last_sign_in_at` = '2017-11-29 21:58:00', `updated_at` = '2017-11-29 22:06:06' WHERE `admins`.`id` = 1[0m
+  [1m[35m (65.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/super_admin
+Completed 302 Found in 206ms (ActiveRecord: 117.6ms)
+
+
+Started GET "/super_admin" for 127.0.0.1 at 2017-11-29 16:06:06 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (26.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (103.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (7.0ms)
+Completed 200 OK in 1087ms (Views: 1038.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/super_admin/admin?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:06:16 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY admins.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (210.7ms)
+Completed 200 OK in 421ms (Views: 389.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/admin/1?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:06:21 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"admin", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (0.0ms)
+Completed 200 OK in 195ms (Views: 179.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/hour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:06:27 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"hour"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (266.4ms)
+Completed 200 OK in 393ms (Views: 389.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/super_admin/hour/1?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:06:37 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"hour", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 1 ORDER BY `hours`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (127.9ms)
+Completed 200 OK in 296ms (Views: 262.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/volunteer/1?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:06:45 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (195.2ms)
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'volunteer_descriptions.volunteer_id' in 'where clause': SELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1):
+    1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
+    2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
+    3:     - if !(values = fields.map{ |f| f.formatted_value.presence }).compact.empty? || !RailsAdmin::config.compact_show_view
+    4:       .fieldset
+    5:         %h4
+    6:           = fieldset.label
+  
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `_query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `block in query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `handle_interrupt'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:214:in `block (2 levels) in execute'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:46:in `block in permit_concurrent_loads'
+activesupport (5.1.4) lib/active_support/concurrency/share_lock.rb:185:in `yield_shares'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:45:in `permit_concurrent_loads'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:213:in `block in execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:612:in `block (2 levels) in log'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:611:in `block in log'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:603:in `log'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:212:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:26:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:223:in `execute_and_free'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:31:in `exec_query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:371:in `select'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:42:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `block in select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:117:in `block in cache_sql'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:104:in `cache_sql'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:10:in `select_all'
+activerecord (5.1.4) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/statement_cache.rb:107:in `execute'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:50:in `find_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:157:in `load_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:53:in `reload'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:7:in `reader'
+activerecord (5.1.4) lib/active_record/associations/builder/association.rb:111:in `volunteer_description'
+rails_admin (1.2.0) lib/rails_admin/adapters/active_record/abstract_object.rb:27:in `method_missing'
+rails_admin (1.2.0) lib/rails_admin/config/fields/association.rb:101:in `value'
+rails_admin (1.2.0) lib/rails_admin/config/fields/types/has_one_association.rb:17:in `block in <class:HasOneAssociation>'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `instance_eval'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `block in register_instance_option'
+rails_admin (1.2.0) lib/rails_admin/config/proxyable/proxy.rb:27:in `method_missing'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block (2 levels) in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114405228'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `map'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114405228'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `each'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `_____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114405228'
+actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.1.4) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+actionview (5.1.4) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (5.1.4) lib/abstract_controller/rendering.rb:24:in `render'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+remotipart (1.3.1) lib/remotipart/render_overrides.rb:16:in `render_with_remotipart'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:23:in `block (4 levels) in <class:Show>'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `call'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `respond_to'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:21:in `block (2 levels) in <class:Show>'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `instance_eval'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `show'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+railties (5.1.4) lib/rails/railtie.rb:185:in `public_send'
+railties (5.1.4) lib/rails/railtie.rb:185:in `method_missing'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/super_admin/volunteer/1" for 127.0.0.1 at 2017-11-29 16:06:47 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"model_name"=>"volunteer", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application (72.4ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'volunteer_descriptions.volunteer_id' in 'where clause': SELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1):
+    1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
+    2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
+    3:     - if !(values = fields.map{ |f| f.formatted_value.presence }).compact.empty? || !RailsAdmin::config.compact_show_view
+    4:       .fieldset
+    5:         %h4
+    6:           = fieldset.label
+  
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `_query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `block in query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `handle_interrupt'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:214:in `block (2 levels) in execute'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:46:in `block in permit_concurrent_loads'
+activesupport (5.1.4) lib/active_support/concurrency/share_lock.rb:185:in `yield_shares'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:45:in `permit_concurrent_loads'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:213:in `block in execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:612:in `block (2 levels) in log'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:611:in `block in log'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:603:in `log'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:212:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:26:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:223:in `execute_and_free'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:31:in `exec_query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:371:in `select'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:42:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `block in select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:117:in `block in cache_sql'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:104:in `cache_sql'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:10:in `select_all'
+activerecord (5.1.4) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/statement_cache.rb:107:in `execute'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:50:in `find_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:157:in `load_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:53:in `reload'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:7:in `reader'
+activerecord (5.1.4) lib/active_record/associations/builder/association.rb:111:in `volunteer_description'
+rails_admin (1.2.0) lib/rails_admin/adapters/active_record/abstract_object.rb:27:in `method_missing'
+rails_admin (1.2.0) lib/rails_admin/config/fields/association.rb:101:in `value'
+rails_admin (1.2.0) lib/rails_admin/config/fields/types/has_one_association.rb:17:in `block in <class:HasOneAssociation>'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `instance_eval'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `block in register_instance_option'
+rails_admin (1.2.0) lib/rails_admin/config/proxyable/proxy.rb:27:in `method_missing'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block (2 levels) in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114582792'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `map'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114582792'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `each'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `_____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_114582792'
+actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.1.4) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+actionview (5.1.4) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (5.1.4) lib/abstract_controller/rendering.rb:24:in `render'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+remotipart (1.3.1) lib/remotipart/render_overrides.rb:16:in `render_with_remotipart'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:23:in `block (4 levels) in <class:Show>'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `call'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `respond_to'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:21:in `block (2 levels) in <class:Show>'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `instance_eval'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `show'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+railties (5.1.4) lib/rails/railtie.rb:185:in `public_send'
+railties (5.1.4) lib/rails/railtie.rb:185:in `method_missing'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/super_admin/hour" for 127.0.0.1 at 2017-11-29 16:07:11 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (194.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (7.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (73.3ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (9.0ms)
+Completed 200 OK in 1247ms (Views: 1231.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/super_admin/volunteer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:07:23 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (164.3ms)
+Completed 200 OK in 329ms (Views: 311.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/volunteer?model_name=volunteer&sort=id&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:07:34 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"volunteer", "sort"=>"id", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (153.3ms)
+Completed 200 OK in 277ms (Views: 278.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/super_admin/volunteer?model_name=volunteer&sort=id&sort_reverse=true&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:07:36 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"volunteer", "sort"=>"id", "sort_reverse"=>"true", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id asc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (134.9ms)
+Completed 200 OK in 302ms (Views: 285.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/hour?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:07:55 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"hour"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (137.6ms)
+Completed 200 OK in 314ms (Views: 297.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/super_admin/volunteer/1?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:08:06 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer", "id"=>"1"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteerDescription Load (0.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/pjax (87.9ms)
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'volunteer_descriptions.volunteer_id' in 'where clause': SELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1):
+    1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
+    2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
+    3:     - if !(values = fields.map{ |f| f.formatted_value.presence }).compact.empty? || !RailsAdmin::config.compact_show_view
+    4:       .fieldset
+    5:         %h4
+    6:           = fieldset.label
+  
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `_query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `block in query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `handle_interrupt'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:214:in `block (2 levels) in execute'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:46:in `block in permit_concurrent_loads'
+activesupport (5.1.4) lib/active_support/concurrency/share_lock.rb:185:in `yield_shares'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:45:in `permit_concurrent_loads'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:213:in `block in execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:612:in `block (2 levels) in log'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:611:in `block in log'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:603:in `log'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:212:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:26:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:223:in `execute_and_free'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:31:in `exec_query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:371:in `select'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:42:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `block in select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:117:in `block in cache_sql'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:104:in `cache_sql'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:10:in `select_all'
+activerecord (5.1.4) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/statement_cache.rb:107:in `execute'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:50:in `find_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:157:in `load_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:53:in `reload'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:7:in `reader'
+activerecord (5.1.4) lib/active_record/associations/builder/association.rb:111:in `volunteer_description'
+rails_admin (1.2.0) lib/rails_admin/adapters/active_record/abstract_object.rb:27:in `method_missing'
+rails_admin (1.2.0) lib/rails_admin/config/fields/association.rb:101:in `value'
+rails_admin (1.2.0) lib/rails_admin/config/fields/types/has_one_association.rb:17:in `block in <class:HasOneAssociation>'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `instance_eval'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `block in register_instance_option'
+rails_admin (1.2.0) lib/rails_admin/config/proxyable/proxy.rb:27:in `method_missing'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block (2 levels) in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_98894652'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `map'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_98894652'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `each'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `_____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_98894652'
+actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.1.4) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+actionview (5.1.4) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (5.1.4) lib/abstract_controller/rendering.rb:24:in `render'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+remotipart (1.3.1) lib/remotipart/render_overrides.rb:16:in `render_with_remotipart'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:23:in `block (4 levels) in <class:Show>'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `call'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `respond_to'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:21:in `block (2 levels) in <class:Show>'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `instance_eval'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `show'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+railties (5.1.4) lib/rails/railtie.rb:185:in `public_send'
+railties (5.1.4) lib/rails/railtie.rb:185:in `method_missing'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/super_admin/volunteer/1" for 127.0.0.1 at 2017-11-29 16:08:07 -0600
+Processing by RailsAdmin::MainController#show as HTML
+  Parameters: {"model_name"=>"volunteer", "id"=>"1"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/show.html.haml within layouts/rails_admin/application (80.6ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'volunteer_descriptions.volunteer_id' in 'where clause': SELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` WHERE `volunteer_descriptions`.`volunteer_id` = 1 LIMIT 1):
+    1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
+    2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
+    3:     - if !(values = fields.map{ |f| f.formatted_value.presence }).compact.empty? || !RailsAdmin::config.compact_show_view
+    4:       .fieldset
+    5:         %h4
+    6:           = fieldset.label
+  
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `_query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:120:in `block in query'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `handle_interrupt'
+mysql2-0.4.10-x86 (mingw32) lib/mysql2/client.rb:119:in `query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:214:in `block (2 levels) in execute'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:46:in `block in permit_concurrent_loads'
+activesupport (5.1.4) lib/active_support/concurrency/share_lock.rb:185:in `yield_shares'
+activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:45:in `permit_concurrent_loads'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:213:in `block in execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:612:in `block (2 levels) in log'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:611:in `block in log'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:603:in `log'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:212:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:26:in `execute'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:223:in `execute_and_free'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:31:in `exec_query'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:371:in `select'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:42:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `block in select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:117:in `block in cache_sql'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:104:in `cache_sql'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `select_all'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql/database_statements.rb:10:in `select_all'
+activerecord (5.1.4) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/statement_cache.rb:107:in `execute'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:50:in `find_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:157:in `load_target'
+activerecord (5.1.4) lib/active_record/associations/association.rb:53:in `reload'
+activerecord (5.1.4) lib/active_record/associations/singular_association.rb:7:in `reader'
+activerecord (5.1.4) lib/active_record/associations/builder/association.rb:111:in `volunteer_description'
+rails_admin (1.2.0) lib/rails_admin/adapters/active_record/abstract_object.rb:27:in `method_missing'
+rails_admin (1.2.0) lib/rails_admin/config/fields/association.rb:101:in `value'
+rails_admin (1.2.0) lib/rails_admin/config/fields/types/has_one_association.rb:17:in `block in <class:HasOneAssociation>'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `instance_eval'
+rails_admin (1.2.0) lib/rails_admin/config/configurable.rb:66:in `block in register_instance_option'
+rails_admin (1.2.0) lib/rails_admin/config/proxyable/proxy.rb:27:in `method_missing'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block (2 levels) in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_105204696'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `map'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:3:in `block in _____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_105204696'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `each'
+rails_admin (1.2.0) app/views/rails_admin/main/show.html.haml:1:in `_____ails_nstaller__uby______lib_ruby_gems_______gems_rails_admin_______app_views_rails_admin_main_show_html_haml___487065397_105204696'
+actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.1.4) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+actionview (5.1.4) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.1.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (5.1.4) lib/abstract_controller/rendering.rb:24:in `render'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+remotipart (1.3.1) lib/remotipart/render_overrides.rb:16:in `render_with_remotipart'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:23:in `block (4 levels) in <class:Show>'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `call'
+actionpack (5.1.4) lib/action_controller/metal/mime_responds.rb:201:in `respond_to'
+rails_admin (1.2.0) lib/rails_admin/config/actions/show.rb:21:in `block (2 levels) in <class:Show>'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `instance_eval'
+rails_admin (1.2.0) app/controllers/rails_admin/main_controller.rb:22:in `show'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+railties (5.1.4) lib/rails/railtie.rb:185:in `public_send'
+railties (5.1.4) lib/rails/railtie.rb:185:in `method_missing'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/super_admin/hour" for 127.0.0.1 at 2017-11-29 16:08:41 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"hour"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY hours.id desc LIMIT 20 OFFSET 0[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (170.2ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (74.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (8.0ms)
+Completed 200 OK in 1252ms (Views: 1236.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/volunteer_description?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:09:37 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer_description"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteerDescription Load (1.0ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY volunteer_descriptions.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (126.4ms)
+Completed 200 OK in 290ms (Views: 258.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/super_admin/volunteer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:09:40 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (21.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (198.9ms)
+Completed 200 OK in 339ms (Views: 298.6ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/super_admin/volunteer?model_name=volunteer&utf8=%E2%9C%93&f%5BvolType%5D%5B34278%5D%5Bo%5D=like&f%5BvolType%5D%5B34278%5D%5Bv%5D=a&query=&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:10:42 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"volunteer", "utf8"=>"✓", "f"=>{"volType"=>{"34278"=>{"o"=>"like", "v"=>"a"}}}, "query"=>"", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (77.6ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE ((LOWER(volunteers.volType) LIKE '%a%')) ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (218.5ms)
+Completed 200 OK in 331ms (Views: 243.1ms | ActiveRecord: 78.6ms)
+
+
+Started GET "/super_admin/volunteer?f%5BvolType%5D%5B34278%5D%5Bo%5D=like&f%5BvolType%5D%5B34278%5D%5Bv%5D=a&model_name=volunteer&sort=phoneNum&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:10:56 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"f"=>{"volType"=>{"34278"=>{"o"=>"like", "v"=>"a"}}}, "model_name"=>"volunteer", "sort"=>"phoneNum", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (26.8ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE ((LOWER(volunteers.volType) LIKE '%a%')) ORDER BY volunteers.phoneNum asc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (149.2ms)
+Completed 200 OK in 317ms (Views: 270.8ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/super_admin/volunteer?f%5BvolType%5D%5B34278%5D%5Bo%5D=like&f%5BvolType%5D%5B34278%5D%5Bv%5D=a&model_name=volunteer&sort=phoneNum&sort_reverse=true&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:10:57 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"f"=>{"volType"=>{"34278"=>{"o"=>"like", "v"=>"a"}}}, "model_name"=>"volunteer", "sort"=>"phoneNum", "sort_reverse"=>"true", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE ((LOWER(volunteers.volType) LIKE '%a%')) ORDER BY volunteers.phoneNum desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (127.4ms)
+Completed 200 OK in 295ms (Views: 280.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/super_admin/volunteer?model_name=volunteer&sort=phoneNum&sort_reverse=true&utf8=%E2%9C%93&query=&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:23 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"volunteer", "sort"=>"phoneNum", "sort_reverse"=>"true", "utf8"=>"✓", "query"=>"", "_pjax"=>"[data-pjax-container]"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.phoneNum desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (184.8ms)
+Completed 200 OK in 323ms (Views: 307.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/volunteer/export?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:32 -0600
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax (36.9ms)
+Completed 200 OK in 1116ms (Views: 1106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/volunteer/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:35 -0600
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+Started GET "/super_admin/volunteer/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:36 -0600
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAdmin Load (9.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT `hours`.* FROM `hours` ORDER BY hours.id desc[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (3.0ms)
+  [1m[36mVolunteer Load (60.6ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (403.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_submit_buttons.html.haml (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (1578.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (0.0ms)
+Completed 200 OK in 1718ms (Views: 1645.1ms | ActiveRecord: 61.6ms)
+
+
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+  [1m[36mHour Load (2.0ms)[0m  [1m[34mSELECT `hours`.* FROM `hours` ORDER BY hours.id desc[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` IN (23, 11, 1, 2, 8)[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (17.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/_submit_buttons.html.haml (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (1174.9ms)
+Completed 200 OK in 1383ms (Views: 1298.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/super_admin/volunteer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:40 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (156.6ms)
+Completed 200 OK in 315ms (Views: 274.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/super_admin/volunteer/export?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:42 -0600
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/export.html.haml within layouts/rails_admin/pjax (37.5ms)
+Completed 200 OK in 758ms (Views: 720.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/super_admin/volunteer?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-11-29 16:11:48 -0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"volunteer"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY volunteers.id desc LIMIT 20 OFFSET 0[0m
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (175.8ms)
+Completed 200 OK in 301ms (Views: 286.5ms | ActiveRecord: 1.5ms)
+
+

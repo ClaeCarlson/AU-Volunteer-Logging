@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/super_admin', as: 'rails_admin'
   devise_for :admins, path: 'admin', controllers: { sessions: "admins/sessions" , registrations: "admins/registrations"}
   devise_for :volunteers, path: 'volunteer', controllers: { sessions: "volunteers/sessions" , registrations: "volunteers/registrations"}
   
+  
+
   root 'pages#home'
   get 'pages/home'
 
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   get 'admins/register', to: 'volunteers#new'
   get 'admins/reports', to: 'reports#reports'
 
-  resources :admin, :controller => 'admins'
+  resources :admins, :controller => 'admins'
   resources :volunteer_descriptions
   resources :volunteers
   resources :hours
