@@ -1,4 +1,5 @@
 class HoursController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_hour, only: [:show, :edit, :update, :destroy]
 
   # GET /hours
@@ -29,7 +30,7 @@ class HoursController < ApplicationController
 
     respond_to do |format|
       if @hour.save
-        format.html { redirect_to @hour, notice: 'Hour was successfully created.' }
+        format.html { redirect_to '/admins/log_hours', notice: 'Hour was successfully created.' }
         format.json { render :show, status: :created, location: @hour }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class HoursController < ApplicationController
   def update
     respond_to do |format|
       if @hour.update(hour_params)
-        format.html { redirect_to @hour, notice: 'Hour was successfully updated.' }
+        format.html { redirect_to '/admins/log_hours', notice: 'Hour was successfully updated.' }
         format.json { render :show, status: :ok, location: @hour }
       else
         format.html { render :edit }

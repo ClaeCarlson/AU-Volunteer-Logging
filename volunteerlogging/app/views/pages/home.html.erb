@@ -2,7 +2,7 @@
         button {
             width: 100%;
             height: 200px;
-            background-color: ;
+            background-color: white;
         }
     </style>
    <div id="Ndiv"  style="margin-top:30%; height:75%;" class="row col-10 offset-1">
@@ -24,9 +24,9 @@
         $("button").click(function(e){
             $("button").hide();
             if(e.target.id == "admin"){
-                window.location = "/admins/sign_in";
+                window.location = "/admin/sign_in";
             }else{
-                window.location = "/volunteers/sign_in";
+                window.location = "/volunteer/sign_in";
             }
             
         });

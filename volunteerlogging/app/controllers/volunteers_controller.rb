@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-  before_action :authorize_admin, only: :create
+  
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
 
   # GET /volunteers
@@ -32,7 +32,7 @@ class VolunteersController < ApplicationController
 
     respond_to do |format|
       if @volunteer.save
-        format.html { redirect_to @volunteer, notice: 'Volunteer was successfully created.' }
+        format.html { redirect_to '/admins/volunteers', notice: 'Volunteer was successfully created.' }
         format.json { render :show, status: :created, location: @volunteer }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class VolunteersController < ApplicationController
   def update
     respond_to do |format|
       if @volunteer.update(volunteer_params)
-        format.html { redirect_to @volunteer, notice: 'Volunteer was successfully updated.' }
+        format.html { redirect_to '/admins/volunteers', notice: 'Volunteer was successfully updated.' }
         format.json { render :show, status: :ok, location: @volunteer }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class VolunteersController < ApplicationController
   def destroy
     @volunteer.destroy
     respond_to do |format|
-      format.html { redirect_to volunteers_url, notice: 'Volunteer was successfully destroyed.' }
+      format.html { redirect_to '/admins/volunteers', notice: 'Volunteer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class VolunteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volunteer_params
-      params.require(:volunteer).permit(:volunteer_id, :firstName, :lastName, :email, :encrypted_password, :dateJoined, :phoneNum, :volType)
+      params.require(:volunteer).permit(:volunteer_id, :firstName, :lastName, :email, :dateJoined, :phoneNum, :volType,:password)
     end
 end

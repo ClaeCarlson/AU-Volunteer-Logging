@@ -16,11 +16,6 @@ class AdminsController < ApplicationController
   def volunteers
     @volunteers = Volunteer.all
   end
-
-  def createVol
-    @new_vol = Volunteer.new()
-  end
-
   # GET /admins/1
   # GET /admins/1.json
   def show

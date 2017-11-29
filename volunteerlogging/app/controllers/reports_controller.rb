@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+    before_action :authenticate_admin!
     def reports
        @volunteers = Volunteer.all
        @hours = Hour.all

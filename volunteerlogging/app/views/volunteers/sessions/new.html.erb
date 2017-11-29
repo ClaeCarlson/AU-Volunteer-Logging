@@ -1,26 +1,47 @@
-<h2>Log in</h2>
+<style>
+  .jumbotron {
+    background-color: white;
+    margin-top: 10%;
+    
+  }
+</style>
 
+<div class="jumbotron col-10 offset-1">
+  <div class="row col-12">
+    <h2 class="col-4 offset-4 text-center">Log in</h2>
+  </div>
+  <br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row col-12">
+   
+    <label class="col-4 text-right">Email:</label>
+    <%= f.email_field :email, autofocus: true, :class=>"col-4 form-control" %>
+    
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <br>
+  <div class="row col-12">
+   
+    <label class="col-4 text-right">Password:</label>
+    <%= f.password_field :password, autocomplete: "off", :class=>"col-4 form-control" %>
+    
   </div>
+  <br>
+  <div class="row col-12">
+  
+    <% if devise_mapping.rememberable? -%>
+    
+      
+      <label class="col-4 offset-4 text-right"><%= f.check_box :remember_me %> Remember Me</label>
+    
+    <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  </div>
+  <div class="row col-12">
+     <%= f.submit "Log in" , :class=>"btn col-2 offset-6"%>
+  </div>
+  <div class="offset-3">
+  <%= render "admins/shared/links" %>
   </div>
 <% end %>
 
-<%= render "volunteers/shared/links" %>
+</div>
