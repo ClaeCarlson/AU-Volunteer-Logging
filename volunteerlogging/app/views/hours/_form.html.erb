@@ -5,7 +5,7 @@
 }
 </style>
 
-<%= form_with(model: hour, local: true) do |form| %>
+<%= form_for :hour , remote: true do |form| %>
   <% if hour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hour.errors.count, "error") %> prohibited this hour from being saved:</h2>
@@ -43,6 +43,7 @@
       <%= form.text_field :hoursWorked, id: :hour_hoursWorked, :class=>"form-control col-1"%>
     </div>
     <br>
+     <%= form.text_field :section_id %>
     <div class="row">
       <label class="col-3 text-right">Day Worked:</label>
       <%= form.date_field :weekWorked, id: :hour_weekWorked, :class=>" datepicker form-control col-3"%>

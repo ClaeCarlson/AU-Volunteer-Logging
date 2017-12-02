@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :sections
+
+  resources :events
   mount RailsAdmin::Engine => '/super_admin', as: 'rails_admin'
   devise_for :admins, path: 'admin', controllers: { sessions: "admins/sessions" , registrations: "admins/registrations"}
   devise_for :volunteers, path: 'volunteer', controllers: { sessions: "volunteers/sessions" , registrations: "volunteers/registrations"}
@@ -8,6 +11,14 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/home'
 
+  get 'event/showEvent', to: 'events#showEvent', as: "eshow"  
+  get 'event/sections', to: 'events#sections'
+
+  post 'sign_up', to: 'events#sign_up'
+  post 'leave', to: 'events#leave'
+  post 'event/create_sections', to: 'events#createSections'
+  get  'event/create_sections', to: 'events#new'
+  get 'section', to: "events#eventSections"
   get 'pages/about'
   get 'volunteers/home', to: 'volunteers#home'
 
@@ -20,6 +31,8 @@ Rails.application.routes.draw do
   post 'admins/log_hours', to: 'hours#create'
   get 'admins/register', to: 'volunteers#new'
   get 'admins/reports', to: 'reports#reports'
+
+  get 'calendar', to: 'calendar#calendar'
 
   resources :admins, :controller => 'admins'
   resources :volunteer_descriptions

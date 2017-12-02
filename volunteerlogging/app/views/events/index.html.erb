@@ -1,0 +1,132 @@
+<p id="notice"><%= notice %></p>
+
+
+<style>
+#cal-back {
+    background-color: white;
+    margin-top: 10%;
+}
+</style>
+<div id="cal-back" class="jumbotron col-10 offset-1">
+<div id="calendar"></div>
+</div>
+<div id="newEventModal" style="display:none" class="modal col-10 offset-1">
+  <span class="close">&times;</span>
+  <div id=" " class="modal-content col-12">
+    
+    <div id="slots" class="row col-12 offset-1">
+    </div>
+    
+    
+  </div>
+</div>
+<script>
+  var vol = <%= current_volunteer.to_json.html_safe %>
+  
+
+  $(document).on('click','button', function(event){
+    
+    
+     var hour = {section_id: event.target.id, volunteer_id: vol.id};
+   
+     if($.isNumeric(event.target.id)){
+      $.ajax({
+        url: 'sign_up',
+        dataType: "json",
+        type: 'POST',
+        data: {hour},
+        success: function(data){
+          $('#newEventModal').hide();
+          
+        },
+        error: function(){
+          alert("Sign up failed");
+        }
+
+      });
+     }else{
+     
+       var hour = {volunteer_id: vol.id, section_id: event.target.value}
+       $.ajax({
+        url: 'leave',
+        dataType: "json",
+        type: 'POST',
+        data: {hour},
+        success: function(data){
+          alert("Successfully left the slot");
+        },
+        error: function(){
+          alert("faiiled");
+        }
+
+
+       });
+     }
+    
+  });
+
+
+   var initialize_calendar;
+    initialize_calendar = function(){
+    $('#calendar').fullCalendar({
+      
+       events: '/events.json',
+       
+
+       eventClick: function(event, jsEvent, view){
+
+          $.ajax({url: 'event/showEvent',
+            dataType: "json",
+            type: "GET",
+            data: {id: event.id},
+            success: function(data){
+              $("#slots").html("");
+              var vol = <%= current_volunteer.to_json.html_safe %>
+              var a = "";
+              var count = 1;
+              var signup = true
+              data[0].forEach(function(num){
+                a = "<div id='slot"+count +"' class='col-5'>  <h3>Slot "+count+"</h3><br>";
+                
+               
+                data[num.id].forEach(function(person){
+                 
+                  
+                   a += "<label>"+ person.firstName + " " + person.lastName + "</label>";
+                  if(vol.id == person.id){
+                    a += "<button name='leave' value='"+num.id+"' class='btn col-3 hover'>Leave Slot</button>";
+                  }
+                  a += "<br>";
+                });
+                a +="<button  id='"+num.id+"' name='signup'  class='btn col-3 hover'>Sign Up</button><br>";
+                
+                a +="</div>";
+                 $("#slots").append(a);
+                count++;
+              });
+
+              
+              $('#newEventModal').show();
+             
+             },
+            error: function(){
+               alert("didnt work");
+             }
+           });
+          return false;
+       }
+    });
+
+
+    }
+  $(document).on('turbolinks:load', initialize_calendar);
+
+  $('span').click(function(){
+    $('#newEventModal').hide();
+    
+  });
+  
+
+
+</script>
+<%= link_to 'New Event', new_event_path %>

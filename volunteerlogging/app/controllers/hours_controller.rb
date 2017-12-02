@@ -71,6 +71,6 @@ class HoursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hour_params
-      params.require(:hour).permit(:hour_id, :hoursWorked, :weekWorked, :volunteer_id)
+      params.require(:hour).permit(:hour_id, :hoursWorked, :weekWorked, :volunteer_id, :section_id)
     end
 end
