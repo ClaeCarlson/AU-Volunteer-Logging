@@ -2,12 +2,23 @@
 background {
     width: 100%;
 }
+.welcome {
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: 24%;
+  text-align: center;
+  color: white;
+  background-color: #00467f;
+  height: 100px;
+  width: 700px;
+
+}
 button {
     height: 200px;
     width: 300px;
     margin-top: 20px;
     background-color: white;
-    
+
 } h1 {
     font-size: 25px;
 }
@@ -17,28 +28,28 @@ button[name="report"], button[name="registers"] {
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
+<h1 class = "welcome"; align = "center"; style = "font-size:50px; color:white; margin-top: 10%; text-shadow: 2px 2px black;">Welcome to Libby's Place</h1>
 <div id="container" style= "margin-top: 10%; " id="Ndiv" class="col-10 offset-1 offset-lg-2">
-        
+
             <button id="volunteer" class = "btn  col-5 col-lg-4">
                <h1 id="volunteer" >Volunteers</h1>
             </button>
-        
-        
+
+
             <button id="loghours" class = "btn col-5  col-lg-4 offset-1 ">
                <h1 id="loghours">Log Hours</h1>
             </button>
-        
-       
+
+
             <button id="register" name="registers" class = "btn col-5 col-lg-4">
                 <h1 id="register">Register Volunteers</h1>
             </button>
-    
-      
+
+
             <button id="reports" name="report" class = "btn btn-lrg col-5 col-lg-4 offset-1">
                 <h1 id="reports" >Reports</h1>
             </button>
-       
+
 </div>
 
 <script>
