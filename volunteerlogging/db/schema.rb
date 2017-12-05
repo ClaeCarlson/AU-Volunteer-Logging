@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130220159) do
+ActiveRecord::Schema.define(version: 20171204075636) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "admin_id"
@@ -34,12 +34,20 @@ ActiveRecord::Schema.define(version: 20171130220159) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "event_repeateds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "event_id"
+    t.date "startDate"
+    t.date "endDate"
+    t.string "dow"
+  end
+
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "description"
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer "numOfSections"
+    t.bigint "repeated_id", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,6 +7,9 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
   end
+
+  def create_event
+  end
   
   def sign_up    
     @hour = Hour.new(hour_params)
@@ -34,17 +37,23 @@ class EventsController < ApplicationController
   end
 
   def createSections
-    num = 3
+    
     event = params["event"]
-    newevent = Event.new(event_params)
-    newevent.save
-    start = event["start_time(4i)"].to_i
-    endtime = event["end_time(4i)"].to_i
+    repeated = params["event_repeated"]
+    @newevent = Event.new(event_params)
+    @newevent.save
+    puts event
+    startTime = event["start_time(4i)"].to_i
+    endTime = event["end_time(4i)"].to_i
+    puts startTime
+    puts endTime
+  
+    num =  startTime + (endTime - startTime)
+   
+    eid = Event.find_by_sql("select id, repeated_id from events order by id desc limit 1")
     
-    eid = Event.find_by_sql("select id from events order by id desc limit 1")
-    
-    
-    for i in start..endtime
+    puts num
+    for i in startTime..num 
     
       params['section'] = {"start(1i)"=> event["start_time(1i)"],
                       "start(2i)" => event["start_time(2i)"],
@@ -57,21 +66,24 @@ class EventsController < ApplicationController
                       "end(4i)" => "#{i + 1}",
                       "end(5i)" => event["end_time(5i)"],
                       "event_id" => eid[0].id,
-                      "event_section" => "#{i + 1 - start.to_i}"
+                      "event_section" => "#{i + 1 - startTime}"
                       
                      }
+                     puts params['section']
       section = Section.new(section_params)
       section.save
     end
     
-
+    respond_to do |format|
+      format.json {render json: @newevent}
+    end
     
   end
 
   def showEvent
     @hour = Hour.new
     eid = params["id"]
-    secs = Volunteer.find_by_sql("select id from sections where event_id = #{eid}")
+    secs = Volunteer.find_by_sql("select id,start,end from sections where event_id = #{eid}")
     count = 0
     @dataHash = Hash.new
     @dataHash[0] = secs
@@ -125,6 +137,9 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def updateCal
   end
 
   # PATCH/PUT /events/1

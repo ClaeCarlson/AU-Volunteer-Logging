@@ -1,40 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-
-<style>
-
-
-#cal-back {
-    background-color: white;
-    margin-top: 20px;
-}
-
-</style>
-<div id="cal-back" class="jumbotron col-10 offset-1">
-
-  <div id="calendar">
-  </div>
-
-</div>
-
-
-<script>
 var initialize_calendar;
-var vol;
-$("#modal").slideUp(0);
-
+var vol
 $.ajax({
     url: "/signed_in",
     type: "get",
     dataType: "json",
     success: function(data) {
-         vol = data;
+        vol = data;
     }
+
 });
 
 initialize_calendar = function() {
     $('#calendar').fullCalendar({
-        height: 550,
+
         events: '/events.json',
 
 
@@ -53,7 +31,7 @@ initialize_calendar = function() {
                     var signup = true;
 
                     data[0].forEach(function(num) {
-                        a = "<div id='slot" + count + "' class='col-4'>  <h3>Slot " + count + "</h3>";
+                        a = "<div id='slot" + count + "' class='col-5'>  <h3>Slot " + count + "</h3><br>";
 
                         var start = (num.start.substr(11, 2) % 12 == 0 ? 12 : num.start.substr(11, 2) % 12) + ":" + num.start.substr(14, 2) + (num.start.substr(11, 2) < 12 ? 'am' : 'pm');
 
@@ -64,11 +42,11 @@ initialize_calendar = function() {
                         data[num.id].forEach(function(person) {
                             a += "<label>" + person.firstName + " " + person.lastName + "</label>";
                             if (vol.id == person.id) {
-                                a += "  <small><button id='leave' value='" + num.id + "' class='btn btn-xs btn-danger'>Leave</button></small>";
+                                a += "<button id='leave' value='" + num.id + "' class='btn col-3 hover'>Leave Slot</button>";
                             }
-                           
+                            a += "<br>";
                         });
-                        a += "<button  id='signup'  value='" + num.id + "' class='btn btn-md btn-primary'>Sign Up</button><br>";
+                        a += "<button  id='signup'  " + num.id + "' class='btn col-3 hover'>Sign Up</button><br>";
 
                         a += "</div>";
                         $("#content").append(a);
@@ -76,7 +54,7 @@ initialize_calendar = function() {
                     });
 
 
-                    $('#modal').slideDown("slow");
+                    $('#modal').show();
 
                 },
                 error: function() {
@@ -86,11 +64,7 @@ initialize_calendar = function() {
             return false;
         },
         dayClick: function(date, jsEvent, view) {
-          if(<%= current_admin.to_json.html_safe %>){
-            $.getScript('/create_event', function(response) {
-              
-            });
-          }
+            $.getScript('/create_event', function() {});
         }
     });
 
@@ -108,7 +82,7 @@ $(document).on('click', 'button', function(event) {
             type: 'POST',
             data: { hour },
             success: function(data) {
-             
+
 
             },
             error: function() {
@@ -134,8 +108,6 @@ $(document).on('click', 'button', function(event) {
     }
 });
 $('span').click(function() {
+    $('#modal').hide();
 
-    $('#modal').slideUp("slow");
-
-});</script>
-
+});
