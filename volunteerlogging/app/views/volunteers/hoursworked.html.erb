@@ -2,11 +2,10 @@
 
 <div style="display: none">
 <%=
-client = Mysql2::Client.new(:database => "libbyplace", :host => "localhost", :username => "root", :password => "redred");
 
 volunteer = current_volunteer.id
 
-results = client.query("SELECT * FROM hours WHERE volunteer_id = #{volunteer}" );
+results = Hour.find_by_sql("SELECT * FROM hours WHERE volunteer_id = #{volunteer}" );
 =%>
 </div>
 
