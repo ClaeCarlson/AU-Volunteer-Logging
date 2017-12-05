@@ -1,3 +1,32 @@
-Info and Availability for <%= current_volunteer.firstName =%>
-<br>ID:
-<%= current_volunteer.volunteer_id =%>
+
+
+<div style="display: none">
+<%=
+
+volunteer = current_volunteer.id
+
+results = Hour.find_by_sql("SELECT * FROM volunteer_descriptions WHERE volunteerId = #{volunteer}" );
+=%>
+</div>
+
+<div class="jumbotron" style="background-color: white">
+	<h2>More Info for <%= current_volunteer.firstName =%></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Info</th>
+      <th>Dates Available</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% results.each do |info| %>
+      <tr>
+        <td><%= "#{info['infoVolunteer']}" %></td>
+        <td><%= "#{info['datesAvail']}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
