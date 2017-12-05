@@ -1,0 +1,7 @@
+alert("hit");
+$('#calendar').fullCalendar(
+  'renderEvent', 
+  "<%= @newevent %>",
+  true
+);
+$('.modal').modal('hide');

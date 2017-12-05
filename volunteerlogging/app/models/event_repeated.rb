@@ -1,0 +1,2 @@
+class EventRepeated < ApplicationRecord
+end

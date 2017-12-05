@@ -1,0 +1,88 @@
+<style>
+li{
+  display:inline;
+}
+</style>
+<div class="col-10 offset-1">
+<%= form_for :event , url: "/event/create_sections", remote: true do |form| %>
+ 
+
+  <div id="titleid" class="row col-12">
+    <%= form.label :title, :class=>"col-3 text-right" %>
+    <%= form.text_field :title, id: :event_title, :class=>"form-control col-3"%>
+  </div>
+
+  <div class="row col-12">
+    <%= form.label :description, :class=>"col-3 text-right"%>
+    <%= form.text_area :description, id: :event_description, :class=>"form-control col-4" %>
+  </div>
+
+  <div class="row col-12">
+    <%= form.label :start_time, :class=>"col-3 text-right" %>
+    <%= form.datetime_select :start_time, id: :event_start_time, :class=>"form-control datepicker"%>
+
+    <%= form.label :end_time, :class=>"col-3 text-right" %>
+    <%= form.datetime_select :end_time, id: :event_end_time, :class=>"form-control datepicker" %>
+  </div>
+  <%= form.submit%>
+
+<% end %>
+  <div >
+  <button id="submitCreateForm" class="form-control col-3">Submit</button>
+  </div>
+<script>
+
+$("#submitCreateForm").click(function(){
+var title = $("#event_title").val();
+var desc = $("#event_description").val();
+var start = $("#event_start_time_1i").val() + "-"+$("#event_start_time_2i").val() +"-"+$("#event_start_time_3i").val() +" "+$("#event_start_time_4i").val() +":" + $("#event_start_time_5i").val();
+var endtime = $("#event_end_time_1i").val() + "-"+$("#event_end_time_2i").val() +"-"+$("#event_end_time_3i").val() +" "+$("#event_end_time_4i").val() +":" + $("#event_end_time_5i").val();
+var start1 = $("#event_start_time_1i").val();
+var start2 = $("#event_start_time_2i").val() ;
+var start3= $("#event_start_time_3i").val();
+var start4 = +$("#event_start_time_4i").val() ;
+var start5= $("#event_start_time_5i").val();
+var endtime1 = $("#event_end_time_1i").val();
+var endtime2 =$("#event_end_time_2i").val();
+var endtime3 = $("#event_end_time_3i").val() ;
+var endtime4 = $("#event_end_time_4i").val() ;
+var endtime5 = $("#event_end_time_5i").val();
+ 
+  
+  var event = {"title" :title ,
+       "description" : desc,
+       "start_time(1i)" : start1,
+       "start_time(2i)" : start2,
+       "start_time(3i)" : start3,
+       "start_time(4i)" : start4,
+       "start_time(5i)" : start5,
+       "end_time(1i)" :  endtime1,
+       "end_time(2i)" :  endtime2,
+       "end_time(3i)" :  endtime3,
+       "end_time(4i)" :  endtime4,
+       "end_time(5i)" :  endtime5};
+
+  
+  var event1 = {"title" :title ,
+       "description" : desc,
+       "start" : start,
+       "end" :  endtime};
+  $('#calendar').fullCalendar(
+  'renderEvent', 
+ event1,
+  true
+);
+
+  $.ajax({
+    url: "/event/create_sections",
+    data: {"event" : event},
+    type: "POST",
+    success: function(result){
+        
+
+    },error: function(){}
+  
+  });
+});
+
+</script>
