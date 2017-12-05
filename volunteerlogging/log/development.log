@@ -61310,3 +61310,1277 @@ Processing by EventsController#showEvent as JSON
 Completed 200 OK in 25ms (Views: 1.9ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:45:48 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 543ms (Views: 508.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:45:49 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503149423" for 127.0.0.1 at 2017-12-05 13:45:49 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503149423"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (33.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (51.0ms)
+Completed 200 OK in 806ms (Views: 682.6ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:45:51 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 24ms (Views: 1.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:47:01 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.5ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 517ms (Views: 484.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:47:02 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503222436" for 127.0.0.1 at 2017-12-05 13:47:02 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503222436"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (20.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (42.0ms)
+Completed 200 OK in 707ms (Views: 635.7ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:47:04 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:47:30 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.5ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 580ms (Views: 541.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:47:32 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503251717" for 127.0.0.1 at 2017-12-05 13:47:32 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503251717"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.5ms)
+Completed 200 OK in 499ms (Views: 435.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:47:34 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:48:07 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 529ms (Views: 493.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:48:08 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503288646" for 127.0.0.1 at 2017-12-05 13:48:09 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503288646"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (3.0ms)
+Completed 200 OK in 617ms (Views: 577.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:48:10 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:48:52 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 519ms (Views: 487.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:48:53 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503333045" for 127.0.0.1 at 2017-12-05 13:48:53 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503333045"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (10.0ms)
+Completed 200 OK in 625ms (Views: 589.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:48:54 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:49:26 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 555ms (Views: 524.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:49:27 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503367283" for 127.0.0.1 at 2017-12-05 13:49:27 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503367283"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.0ms)
+Completed 200 OK in 652ms (Views: 614.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:49:29 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:49:47 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 554ms (Views: 508.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:49:48 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503387830" for 127.0.0.1 at 2017-12-05 13:49:48 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503387830"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (5.0ms)
+Completed 200 OK in 723ms (Views: 683.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:49:50 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 13:49:53 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"57", "volunteer_id"=>"1"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 57 LIMIT 1[0m
+  [1m[35mSQL (14.9ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (57, 1, '2017-12-05 19:49:53', '2017-12-05 19:49:53')[0m
+  [1m[35m (66.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.0ms)
+Completed 200 OK in 525ms (Views: 416.2ms | ActiveRecord: 82.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:52:27 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.5ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 560ms (Views: 534.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:52:28 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503547991" for 127.0.0.1 at 2017-12-05 13:52:28 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503547991"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.0ms)
+Completed 200 OK in 588ms (Views: 545.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:52:30 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 13:52:34 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"57"}}
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mselect id from hours where section_id = 57 and volunteer_id = 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 11 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 11[0m
+  [1m[35m (90.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.0ms)
+Completed 200 OK in 519ms (Views: 404.8ms | ActiveRecord: 91.1ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 13:52:38 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"58", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (1.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 58 LIMIT 1[0m
+  [1m[35mSQL (28.2ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (58, 1, '2017-12-05 19:52:38', '2017-12-05 19:52:38')[0m
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.5ms)
+Completed 200 OK in 430ms (Views: 338.8ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:53:35 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 38ms (Views: 1.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 13:53:38 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"58"}}
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mselect id from hours where section_id = 58 and volunteer_id = 1[0m
+  [1m[36mHour Load (0.5ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 12[0m
+  [1m[35m (93.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 501ms (Views: 379.4ms | ActiveRecord: 95.1ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 13:53:44 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"57", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 57 LIMIT 1[0m
+  [1m[35mSQL (27.3ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (57, 1, '2017-12-05 19:53:44', '2017-12-05 19:53:44')[0m
+  [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.0ms)
+Completed 200 OK in 497ms (Views: 418.3ms | ActiveRecord: 67.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:54:23 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.5ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 521ms (Views: 488.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:54:24 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503664365" for 127.0.0.1 at 2017-12-05 13:54:24 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503664365"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (7.0ms)
+Completed 200 OK in 599ms (Views: 565.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:54:26 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 13:54:31 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"58", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (1.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 58 LIMIT 1[0m
+  [1m[35mSQL (53.2ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (58, 1, '2017-12-05 19:54:31', '2017-12-05 19:54:31')[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.0ms)
+Completed 200 OK in 558ms (Views: 390.5ms | ActiveRecord: 152.6ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 13:54:33 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"57"}}
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mselect id from hours where section_id = 57 and volunteer_id = 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 13 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 13[0m
+  [1m[35m (36.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 473ms (Views: 407.9ms | ActiveRecord: 37.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:55:11 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 660ms (Views: 630.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:55:12 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503712044" for 127.0.0.1 at 2017-12-05 13:55:12 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503712044"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (18.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (29.0ms)
+Completed 200 OK in 928ms (Views: 815.9ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:55:54 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 549ms (Views: 515.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:55:55 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503755119" for 127.0.0.1 at 2017-12-05 13:55:55 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503755119"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.5ms)
+Completed 200 OK in 647ms (Views: 608.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:55:56 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 11ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 13:56:01 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"57", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 57 LIMIT 1[0m
+  [1m[35mSQL (39.3ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (57, 1, '2017-12-05 19:56:01', '2017-12-05 19:56:01')[0m
+  [1m[35m (83.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (0.0ms)
+Completed 200 OK in 532ms (Views: 386.4ms | ActiveRecord: 123.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:57:35 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.5ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 517ms (Views: 483.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:57:36 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503855902" for 127.0.0.1 at 2017-12-05 13:57:36 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503855902"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (3.0ms)
+Completed 200 OK in 697ms (Views: 644.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:57:38 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:58:18 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 515ms (Views: 483.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:58:19 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503899089" for 127.0.0.1 at 2017-12-05 13:58:19 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503899089"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (5.0ms)
+Completed 200 OK in 707ms (Views: 652.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:58:21 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:59:22 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 538ms (Views: 508.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:59:23 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503962900" for 127.0.0.1 at 2017-12-05 13:59:23 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503962900"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.5ms)
+Completed 200 OK in 816ms (Views: 764.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:59:25 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 30ms (Views: 3.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 13:59:52 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 589ms (Views: 558.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 13:59:53 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512503993105" for 127.0.0.1 at 2017-12-05 13:59:53 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512503993105"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (10.0ms)
+Completed 200 OK in 739ms (Views: 650.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 13:59:55 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 14:00:09 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 634ms (Views: 597.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 14:00:10 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512504010051" for 127.0.0.1 at 2017-12-05 14:00:10 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512504010051"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (5.0ms)
+Completed 200 OK in 799ms (Views: 724.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:00:12 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (15.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 52ms (Views: 3.2ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 14:00:56 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (5.0ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 490ms (Views: 467.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 14:00:57 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512504057562" for 127.0.0.1 at 2017-12-05 14:00:57 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512504057562"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (30.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (48.0ms)
+Completed 200 OK in 769ms (Views: 685.3ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:01:07 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 24ms (Views: 1.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:01:16 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 13ms (Views: 2.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 14:01:47 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"58", "volunteer_id"=>"1"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (1.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 58 LIMIT 1[0m
+  [1m[35mSQL (31.1ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (58, 1, '2017-12-05 20:01:47', '2017-12-05 20:01:47')[0m
+  [1m[35m (53.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 550ms (Views: 434.7ms | ActiveRecord: 87.3ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 14:01:52 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"57"}}
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mselect id from hours where section_id = 57 and volunteer_id = 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 15 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 15[0m
+  [1m[35m (115.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 575ms (Views: 452.2ms | ActiveRecord: 117.1ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 14:01:58 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"59", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (1.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 59 LIMIT 1[0m
+  [1m[35mSQL (67.1ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (59, 1, '2017-12-05 20:01:58', '2017-12-05 20:01:58')[0m
+  [1m[35m (62.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 701ms (Views: 557.8ms | ActiveRecord: 130.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 14:02:38 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 609ms (Views: 571.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 14:02:39 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512504159236" for 127.0.0.1 at 2017-12-05 14:02:39 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512504159236"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (5.0ms)
+Completed 200 OK in 745ms (Views: 709.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:02:41 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 30ms (Views: 2.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 14:02:47 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"58"}}
+  [1m[36mHour Load (22.2ms)[0m  [1m[34mselect id from hours where section_id = 58 and volunteer_id = 1[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 14 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 14[0m
+  [1m[35m (84.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (2.0ms)
+Completed 200 OK in 630ms (Views: 499.1ms | ActiveRecord: 108.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 14:03:39 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 577ms (Views: 543.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 14:03:40 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512504219994" for 127.0.0.1 at 2017-12-05 14:03:40 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512504219994"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (4.0ms)
+Completed 200 OK in 730ms (Views: 689.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:03:41 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 14ms (Views: 1.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 14:03:47 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"58"}}
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mselect id from hours where section_id = 58 and volunteer_id = 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 16 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 16[0m
+  [1m[35m (54.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 483ms (Views: 417.7ms | ActiveRecord: 54.9ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:16:10 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 27ms (Views: 5.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2017-12-05 14:16:14 -0600
+Processing by EventsController#sign_up as JSON
+  Parameters: {"hour"=>{"section_id"=>"58", "volunteer_id"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 LIMIT 1[0m
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 58 LIMIT 1[0m
+  [1m[35mSQL (24.0ms)[0m  [1m[32mINSERT INTO `hours` (`section_id`, `volunteer_id`, `created_at`, `updated_at`) VALUES (58, 1, '2017-12-05 20:16:14', '2017-12-05 20:16:14')[0m
+  [1m[35m (53.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 527ms (Views: 426.2ms | ActiveRecord: 78.9ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:16:22 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/leave" for 127.0.0.1 at 2017-12-05 14:16:24 -0600
+Processing by EventsController#leave as JSON
+  Parameters: {"hour"=>{"volunteer_id"=>"1", "section_id"=>"58"}}
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mselect id from hours where section_id = 58 and volunteer_id = 1[0m
+  [1m[36mHour Load (1.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` WHERE `hours`.`id` = 18 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.4ms)[0m  [1m[31mDELETE FROM `hours` WHERE `hours`.`id` = 18[0m
+  [1m[35m (76.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/index.json.jbuilder
+  Rendered events/index.json.jbuilder (1.0ms)
+Completed 200 OK in 492ms (Views: 394.8ms | ActiveRecord: 89.5ms)
+
+
+Started DELETE "/volunteer/sign_out" for 127.0.0.1 at 2017-12-05 14:16:42 -0600
+Processing by Volunteers::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zjw4UqcztpWnfpbHGBnzmAq3Tp4tenJ9a/DXWDQbeypJfTlwsoa50bnMSISIKNSavkqbIV+AGjbBZwI1gnna3Q=="}
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` WHERE `volunteers`.`id` = 1 ORDER BY `volunteers`.`id` ASC LIMIT 1[0m
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-05 14:16:42 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 813ms (Views: 733.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-12-05 14:16:45 -0600
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (1.5ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 1103ms (Views: 1099.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 127.0.0.1 at 2017-12-05 14:16:51 -0600
+Processing by Admins::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jf4hgVrRGvQ+U5gzLocR7Sdl4ZWtvsmsnBN+7O3n06rQvtHua5uoJSh10FsUrxm/+mavgxA0ap3/WPVAIy9knA==", "admin"=>{"email"=>"troyal01@aurora.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`email` = 'troyal01@aurora.edu' ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (11.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.6ms)[0m  [1m[33mUPDATE `admins` SET `current_sign_in_at` = '2017-12-05 20:16:51', `last_sign_in_at` = '2017-12-05 19:31:43', `sign_in_count` = 62, `updated_at` = '2017-12-05 20:16:52' WHERE `admins`.`id` = 1[0m
+  [1m[35m (60.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 412ms (ActiveRecord: 95.7ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-12-05 14:16:52 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 569ms (Views: 516.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-05 14:17:01 -0600
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 545ms (Views: 517.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signed_in" for 127.0.0.1 at 2017-12-05 14:17:02 -0600
+Processing by ApplicationController#current_user as JSON
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 31ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events.json?start=2017-11-26&end=2018-01-07&_=1512505022552" for 127.0.0.1 at 2017-12-05 14:17:03 -0600
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"2017-11-26", "end"=>"2018-01-07", "_"=>"1512505022552"}
+  Rendering events/index.json.jbuilder
+  [1m[36mEvent Load (29.5ms)[0m  [1m[34mSELECT `events`.* FROM `events`[0m
+  Rendered events/index.json.jbuilder (45.0ms)
+Completed 200 OK in 948ms (Views: 822.4ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/create_event?_=1512505022553" for 127.0.0.1 at 2017-12-05 14:17:05 -0600
+Processing by EventsController#create_event as JS
+  Parameters: {"_"=>"1512505022553"}
+  Rendering events/create_event.js.erb
+  Rendered events/_form.html.erb (7.0ms)
+  Rendered events/create_event.js.erb (378.4ms)
+Completed 200 OK in 1788ms (Views: 1242.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:17:20 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (2.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/event/showEvent?id=78" for 127.0.0.1 at 2017-12-05 14:19:02 -0600
+Processing by EventsController#showEvent as JSON
+  Parameters: {"id"=>"78"}
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mselect id,start,end from sections where event_id = 78[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 57))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 58))[0m
+  [1m[36mVolunteer Load (1.0ms)[0m  [1m[34mselect firstName, lastName, id from
+     volunteers where id in (select volunteer_id from hours where
+     section_id in (select id from sections where id = 59))[0m
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/create_event?_=1512505022554" for 127.0.0.1 at 2017-12-05 14:19:23 -0600
+Processing by EventsController#create_event as JS
+  Parameters: {"_"=>"1512505022554"}
+  Rendering events/create_event.js.erb
+  Rendered events/_form.html.erb (6.5ms)
+  Rendered events/create_event.js.erb (355.7ms)
+Completed 200 OK in 1639ms (Views: 1149.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-12-05 14:38:44 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-12-05 14:39:13 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 568ms (Views: 540.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 127.0.0.1 at 2017-12-05 14:39:25 -0600
+Processing by Admins::SessionsController#new as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-05 14:39:25 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 684ms (Views: 619.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteer/sign_in" for 127.0.0.1 at 2017-12-05 14:39:30 -0600
+Processing by Volunteers::SessionsController#new as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admins/dashboard
+Filter chain halted as :check_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-12-05 14:39:30 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 630ms (Views: 567.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/volunteers" for 127.0.0.1 at 2017-12-05 14:39:38 -0600
+Processing by AdminsController#volunteers as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/volunteers.html.erb within layouts/application
+  [1m[36mVolunteer Load (1.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered admins/volunteers.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 599ms (Views: 488.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-12-05 14:39:44 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 598ms (Views: 540.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2017-12-05 14:39:46 -0600
+Processing by ReportsController#reports as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT `hours`.* FROM `hours`[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/reports_controller.rb:18:in `block in hoursPerMonth'
+app/controllers/reports_controller.rb:14:in `hoursPerMonth'
+app/controllers/reports_controller.rb:7:in `reports'
+Started GET "/super_admin" for 127.0.0.1 at 2017-12-05 14:40:21 -0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (32.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `admins`[0m
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` ORDER BY `admins`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `events`[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  `events`.* FROM `events` ORDER BY `events`.`id` DESC LIMIT 1[0m
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `event_repeateds`[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `hours`[0m
+  [1m[36mHour Load (0.0ms)[0m  [1m[34mSELECT  `hours`.* FROM `hours` ORDER BY `hours`.`id` DESC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `sections`[0m
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT  `sections`.* FROM `sections` ORDER BY `sections`.`id` DESC LIMIT 1[0m
+  [1m[35m (19.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteers`[0m
+  [1m[36mVolunteer Load (0.0ms)[0m  [1m[34mSELECT  `volunteers`.* FROM `volunteers` ORDER BY `volunteers`.`id` DESC LIMIT 1[0m
+  [1m[35m (18.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `volunteer_descriptions`[0m
+  [1m[36mVolunteerDescription Load (0.5ms)[0m  [1m[34mSELECT  `volunteer_descriptions`.* FROM `volunteer_descriptions` ORDER BY `volunteer_descriptions`.`id` DESC LIMIT 1[0m
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (461.2ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (9.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (126.6ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (10.0ms)
+Completed 200 OK in 54503ms (Views: 47751.5ms | ActiveRecord: 177.9ms)
+
+
+Started GET "/hours/new" for 127.0.0.1 at 2017-12-05 14:51:51 -0600
+Processing by HoursController#new as HTML
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering hours/new.html.erb within layouts/application
+  [1m[36mVolunteer Load (0.5ms)[0m  [1m[34mSELECT `volunteers`.* FROM `volunteers`[0m
+  Rendered hours/_form.html.erb (165.0ms)
+  Rendered hours/new.html.erb within layouts/application (202.0ms)
+Completed 200 OK in 930ms (Views: 826.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admins/dashboard" for 127.0.0.1 at 2017-12-05 14:52:10 -0600
+Processing by AdminsController#dashboard as HTML
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering admins/dashboard.html.erb within layouts/application
+  Rendered admins/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 584ms (Views: 494.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/admin/sign_out" for 127.0.0.1 at 2017-12-05 14:52:18 -0600
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wOuZsVdrSKXbfsjY6g7OKJOpWTbVoHcLx+fYwxiVJ1XP+rj0hsXLdy6vyOIkcSAjiyCa1vhcaaJJGhGDvFS/Jw=="}
+  [1m[36mAdmin Load (0.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-05 14:52:19 -0600
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 666ms (Views: 609.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteer/sign_in" for 127.0.0.1 at 2017-12-05 14:52:21 -0600
+Processing by Volunteers::SessionsController#new as HTML
+  Rendering volunteers/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (3.0ms)
+  Rendered volunteers/sessions/new.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 1072ms (Views: 1069.1ms | ActiveRecord: 0.0ms)
+
+
