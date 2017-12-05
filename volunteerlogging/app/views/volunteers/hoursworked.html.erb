@@ -1,0 +1,40 @@
+
+
+<div style="display: none">
+<%=
+client = Mysql2::Client.new(:database => "libbyplace", :host => "localhost", :username => "root", :password => "redred");
+
+volunteer = current_volunteer.id
+
+results = client.query("SELECT * FROM hours WHERE volunteer_id = #{volunteer}" );
+=%>
+</div>
+
+
+<div class="jumbotron" style="background-color: white">
+	<h2>Hours Worked for <%= current_volunteer.firstName =%></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Hoursid</th>
+      <th>Hoursworked</th>
+      <th>Weekworked</th>
+      <th>Volunteerid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% results.each do |hour| %>
+      <tr>
+        <td><%= "#{hour['id']}" %></td>
+        <td><%= "#{hour['hoursWorked']}" %></td>
+        <td><%= "#{hour['weekWorked']}" %></td>
+        <td><%= "#{hour['volunteer_id']}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+

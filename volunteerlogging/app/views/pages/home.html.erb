@@ -5,7 +5,8 @@
             background-color: white;
         }
     </style>
-   <div id="Ndiv"  style="margin-top:30%; height:75%;" class="row col-10 offset-1">
+    <h1 align = "center"; style = "font-size:75px; color:white; margin-top: 10%; text-shadow: 4px 4px black;">Welcome to Libby's Place</h1>
+   <div id="Ndiv"  style="margin-top:15%; height:75%;" class="row col-10 offset-1">
     <div id="Ndiv" class="col-6">
         <button id="volun"  class="btn">
             <h3 class="display-8">I am a Volunteer</h3>
@@ -24,11 +25,18 @@
         $("button").click(function(e){
             $("button").hide();
             if(e.target.id == "admin"){
+                if (<%=admin_signed_in?=%>) {
+                    window.location = "/admins/dashboard";
+                 }else
                 window.location = "/admin/sign_in";
             }else{
+                if (<%=volunteer_signed_in?=%>) {
+                    window.location = "/volunteers/home"
+                }
+                else
                 window.location = "/volunteer/sign_in";
             }
-            
+
         });
 
     </script>

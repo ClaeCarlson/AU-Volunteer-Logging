@@ -2,7 +2,8 @@
 
 <h1>Hours</h1>
 
-<table>
+<div class="jumbotron" style="background-color: white">
+<table class="table">
   <thead>
     <tr>
       <th>Hoursid</th>
@@ -16,10 +17,10 @@
   <tbody>
     <% @hours.each do |hour| %>
       <tr>
-        <td><%= hour.hoursId %></td>
+        <td><%= hour.id %></td>
         <td><%= hour.hoursWorked %></td>
         <td><%= hour.weekWorked %></td>
-        <td><%= hour.volunteerId %></td>
+        <td><%= hour.volunteer_id %></td>
         <td><%= link_to 'Show', hour %></td>
         <td><%= link_to 'Edit', edit_hour_path(hour) %></td>
         <td><%= link_to 'Destroy', hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,6 +28,7 @@
     <% end %>
   </tbody>
 </table>
+<div>
 
 <br>
 

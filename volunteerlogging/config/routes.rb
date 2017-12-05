@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'pages/about'
   get 'volunteers/home', to: 'volunteers#home'
+  get 'volunteers/descriptions', to:'volunteers#descriptions'
+  get 'volunteers/hoursworked', to: "volunteers#hoursworked"
 
   get 'admins/dashboard', to: 'admins#dashboard'
   get 'admins/volunteers', to: 'admins#volunteers'

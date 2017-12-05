@@ -2,17 +2,6 @@
 background {
     width: 100%;
 }
-.welcome {
-	padding: 20px;
-	border-radius: 15px;
-	margin-left: 20%;
-	text-align: center;
-	color: white;
-	background-color: #00467f;
-	height: 80px;
-	width: 400px;
-
-}
 button {
     height: 200px;
     width: 300px;
@@ -30,8 +19,6 @@ button[name="report"], button[name="registers"] {
 
 
 <div id="container" style= "margin-top: 10%; " id="Ndiv" class="col-10 offset-1 offset-lg-2">
-
-	<h2 class="welcome">Welcome, <%= current_volunteer.firstName =%></h2>
         
             <button id="hours" class = "btn  col-5 col-lg-4">
                <h1 id="hours" >View Hours Worked</h1>
@@ -50,10 +37,10 @@ $("button").click(function(e){
     $("#container").hide();
    switch(e.target.id){
        case "hours":
-           window.location = "hoursworked";
+           window.location = "volunteers";
            break;
         case "info":
-           window.location = "descriptions";
+           window.location = "/hours/new";
            break;
         case "empty":
             $("#results").html(" ");
