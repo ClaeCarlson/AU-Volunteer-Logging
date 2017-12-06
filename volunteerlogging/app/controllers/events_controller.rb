@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy            ]
+  before_action :authenticate_admin!, only: [:admin_cal, :createSections]
   respond_to :html, :js
   
   # GET /events
@@ -9,6 +10,10 @@ class EventsController < ApplicationController
   end
 
   def create_event
+  end
+
+  def admin_cal
+    @volunteers = Volunteer.all
   end
   
   def sign_up    

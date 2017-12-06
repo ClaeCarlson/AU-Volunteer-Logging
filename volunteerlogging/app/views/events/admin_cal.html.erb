@@ -1,0 +1,220 @@
+<p id="notice"><%= notice %></p>
+
+
+<style>
+
+
+#cal-back {
+    background-color: white;
+    margin-top: 20px;
+}
+
+#search {
+    max-height: 500px;
+}
+
+</style>
+<div id="cal-back" class="jumbotron col-10 offset-1">
+    <div class="row">
+  <div id="calendar" class="col-8">
+  </div>
+    <div id="search"  class="col-4">
+    <input id="name" type="search" class="form-control   col-6 offset-1" placeholder="Enter Name">
+    <br>
+    <br>
+         <div id="results" class="col-12">
+        </div>
+        <br>
+        <div id="signing_in" >
+        </div>
+    </div>
+
+    <%= link_to :Dashboard, '/admins/dashboard', :class=>"btn col-2 offset-9"%>
+    </div>
+</div>
+
+
+<script>
+var initialize_calendar;
+var vol;
+var signing_in ={};
+var allVols = <%= @volunteers.to_json.html_safe %>
+  
+  $(document).ready(function(){
+  
+
+  var list = "<ul id='mylist' class='list-unstyled'>";
+  $.each(allVols, function(key, obj){
+    list += "<li class='col-10' id='"+ obj.firstName + " " + obj.lastName+ "' ><input type='checkbox' class='checkbox col-2' name='" + obj.firstName + " " + obj.lastName+ "' value='"+ obj.id + "'><label class='col-8'>  " + obj.firstName + " " + obj.lastName+ "</label></li>";
+  });
+  list +="</ul>";
+  
+  $("#results").html(list);
+
+  $("#mylist li").each(function(){
+    $(this).hide();
+  });
+});
+
+
+$("#modal").slideUp(0);
+
+$.ajax({
+    url: "/signed_in",
+    type: "get",
+    dataType: "json",
+    success: function(data) {
+         vol = data;
+    }
+});
+
+initialize_calendar = function() {
+    $('#calendar').fullCalendar({
+        height: 500,
+        width: 400,
+        events: '/events.json',
+
+
+        eventClick: function(event, jsEvent, view) {
+
+            $.ajax({
+                url: 'event/showEvent',
+                dataType: "json",
+                type: "GET",
+                data: { id: event.id },
+                success: function(data) {
+                    $("#content").html("");
+
+                    var a = "";
+                    var count = 1;
+                    var signup = true;
+
+                    data[0].forEach(function(num) {
+                        a = "<div id='slots" + count + "' class='col-4'>  <h3>Slot " + count + "</h3>";
+
+                        var start = (num.start.substr(11, 2) % 12 == 0 ? 12 : num.start.substr(11, 2) % 12) + ":" + num.start.substr(14, 2) + (num.start.substr(11, 2) < 12 ? 'am' : 'pm');
+
+                        var end = (num.end.substr(11, 2) % 12 == 0 ? 12 : num.end.substr(11, 2) % 12) + ":" + num.end.substr(14, 2) + (num.end.substr(11, 2) < 12 ? 'am' : 'pm');
+
+                        a += "<p>" + start + " - " + end + "</p>";
+                        a += "<ul id='slot"+ num.id +"' class='list-unstyled'>";
+                        data[num.id].forEach(function(person) {
+                           
+                            
+                                a += " <li> <small><button id='leave' name='"+ person.id +"' value='" + num.id + "' class='btn col-10 btn-sm btn-danger'>"+person.firstName + " " + person.lastName + "</button></small> </li><br>";
+
+                           
+                        });
+                        a += "</ul><button  id='signup'  value='" + num.id + "' class='btn btn-md btn-primary'>Sign Up</button><br>";
+
+                        a += "</div>";
+                        $("#content").append(a);
+                        count++;
+                    });
+
+
+                    $('#modal').slideDown("slow");
+
+                },
+                error: function() {
+                    alert("didnt work");
+                }
+            });
+            return false;
+        },
+        dayClick: function(date, jsEvent, view) {
+
+           
+          if(<%= current_admin.to_json.html_safe %>){
+            $.getScript('/create_event', function(response) {
+                $("#event_start_time").val(date.format());
+              
+            });
+          }
+        }
+    });
+
+
+}
+$(document).on('turbolinks:load', initialize_calendar);
+
+$(document).on('click', 'button', function(event) {
+    
+
+    if (event.target.id == 'signup') {
+
+        var notsigned = true;
+        $("input[type='checkbox']:checked").each(function(){
+           
+            notsigned = false;
+            var hour = { section_id: event.target.value, volunteer_id: this.value, hoursWorked: 1};
+                var id= this.value;
+                var name= this.name;
+                $.ajax({
+                    url: 'sign_up',
+                    dataType: "json",
+                    type: 'POST',
+                    data: { hour },
+                    success: function() {
+                        
+                        $("#slot"+event.target.value+"").append("<li> <small><button id='leave' name='"+ id +"' value='" + event.target.value + "' class='btn col-10 btn-sm btn-danger'>"+ name + "</button></small> </li><br>");
+                    },
+                    error: function() {
+                        alert("Sign up failed");
+                    }
+
+                });
+
+         });
+         if(notsigned)
+            alert("Must use the search to the right and check the boxes of people you want to signed up");
+    } else if (event.target.id == 'leave') {
+
+        var hour = { volunteer_id: event.target.name, section_id: event.target.value }
+        $.ajax({
+            url: 'leave',
+            dataType: "json",
+            type: 'POST',
+            data: { hour },
+            success: function(data) {
+                $("#slot"+event.target.value+" button[name='" + event.target.name + "'").hide();
+                alert("Successly removed" + event.target.text);
+            },
+            error: function() {
+                alert("faiiled");
+            }
+        });
+    }
+});
+$('span').click(function() {
+$('#modal').slideUp("slow");
+
+});
+
+
+  
+  
+
+
+  $("#name ").keyup(function(e){
+    $("#mylist li").each(function(){
+      var str = this.id.toLowerCase();
+   
+      var filter = e.target.value.toLowerCase();
+      var res = str.match("(.*|\s?)"+filter+".*");
+      if(e.target.value == "")
+        $("#results").hide();
+      else
+        $("#results").show();
+      
+      if(res != null)
+        $(this).show();
+      else
+        $(this).hide();
+    });
+  });
+
+
+
+</script>
+

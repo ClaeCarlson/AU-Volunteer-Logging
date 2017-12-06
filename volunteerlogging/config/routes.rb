@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post 'event/create_sections', to: 'events#createSections'
   get  'event/create_sections', to: 'events#new'
   get 'section', to: "events#eventSections"
-
+  get 'admin_cal', to: "events#admin_cal"
   get 'updateCal', to: "events#updateCal"
 
   get 'pages/about'

@@ -5,6 +5,7 @@ class CreateHours < ActiveRecord::Migration[5.1]
       t.decimal :hoursWorked
       t.date :weekWorked
 
+      t.string :approved
       t.bigint :section_id
       t.belongs_to :section, index: true
       

@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171204075636) do
     t.integer "hour_id"
     t.decimal "hoursWorked", precision: 10
     t.date "weekWorked"
+    t.string "approved"
     t.bigint "section_id"
     t.bigint "volunteer_id"
     t.datetime "created_at", null: false

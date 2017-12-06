@@ -8,23 +8,28 @@ li{
  
 
   <div id="titleid" class="row col-12">
-    <%= form.label :title, :class=>"col-3 text-right" %>
+    <%= form.label :title, :class=>"col-2 text-right" %>
     <%= form.text_field :title, id: :event_title, :class=>"form-control col-3"%>
   </div>
+  <br>
 
   <div class="row col-12">
-    <%= form.label :description, :class=>"col-3 text-right"%>
-    <%= form.text_area :description, id: :event_description, :class=>"form-control col-4" %>
+    <%= form.label :description, :class=>"col-2 text-right"%>
+    <%= form.text_area :description, id: :event_description, :class=>"form-control col-8" %>
   </div>
+  <br>
 
   <div class="row col-12">
-    <%= form.label :start_time, :class=>"col-3 text-right" %>
-    <%= form.datetime_select :start_time, id: :event_start_time, :class=>"form-control datepicker"%>
-
-    <%= form.label :end_time, :class=>"col-3 text-right" %>
-    <%= form.datetime_select :end_time, id: :event_end_time, :class=>"form-control datepicker" %>
+    <%= form.label :start_time, :class=>"col-2 text-right" %>
+    <%= form.date_field :start_time, id: :event_start_time, :class=>"datepicker form-control col-4 "%>
+    <%= form.time_field :start_times, id: :event_start_times, :class=>"datepicker form-control col-4" , :data_format=>"hh:mm"%>
+    </div>
+<br>
+  <div class="row col-12">
+    <%= form.label :end_time, :class=>"col-2 text-right" %>
+    <%= form.datetime_select :end_time, id: :event_end_time, :class=>"form-control datepicker", :data_format=>"hh:mm" %>
   </div>
-  <%= form.submit%>
+  <br>
 
 <% end %>
   <div >
