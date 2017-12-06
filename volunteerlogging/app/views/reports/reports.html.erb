@@ -1,10 +1,10 @@
 <style>
     .jumbotron {
-        margin-top: 10%;
+        margin-top: 1%;
         background-color: white;
     }
 
-    
+
 </style>
 
 
@@ -15,16 +15,16 @@
     <br>
     <div class="row">
         <div class="col-6" style="height:400px; width:500px;">
-            <canvas id="hoursPerMonth" width="400" height="400"></canvas>
+            <canvas id="hoursPerMonth" width="300px" height="300px"></canvas>
         </div>
 
         <div class="col-6" style="height:400px ">
-            <canvas id="amountSaved" width="400" height="400"></canvas>
+            <canvas id="amountSaved" width="300px" height="300px"></canvas>
         </div>
     </div>
 
     <div class="row col-12">
-        <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-10"%>
+        <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-11"%>
     </div>
 </div>
 
@@ -51,7 +51,7 @@ var chart = new Chart(ctx, {
     options: {
         title:{
             display:true,
-            text:'Hours Per Month' 
+            text:'Hours Per Month'
         },
         scales: {
         yAxes: [{
@@ -89,7 +89,7 @@ chart = new Chart(ctx, {
         responsive: true,
         title:{
             display:true,
-            text:'Money Saved (hour * $23)' 
+            text:'Money Saved (hour * $23)'
         },
         legend: {
             display: true
