@@ -15,7 +15,7 @@ class ReportsController < ApplicationController
             month = hr["weekWorked"]
             month = month.month
             
-            puts hr.hoursWorked + 1
+            
             case month
             when 1
             @monthNums[0] += hr.hoursWorked

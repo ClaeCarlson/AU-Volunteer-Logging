@@ -18,11 +18,21 @@ class EventsController < ApplicationController
   end
   
   def sign_up    
+
+    hr = params['hour']
+    puts hr
+    params['hour']['approved'] = "false"
+    puts params['hour']['approved']
     
+    month = Event.find_by_sql("select start_time from events where id = (select event_id from sections where id = #{params["hour"]["section_id"]})")
+    mon= "#{month[0]["start_time"]}"
+    puts mon[5,2]
+    puts month
+    params["hour"]["weekWorked"] = mon
+    params["hour"]["approved"] = false
     @hour = Hour.new(hour_params)
     
-    signed = Volunteer.find_by_sql("select COUNT(*) from hours where volunteer_id = #{@hour.volunteer_id} && section_id =#{@hour.section_id}")
-    
+      
     respond_to do |format|
       if @hour.save
         format.json { render '/events/index' }
@@ -187,7 +197,7 @@ class EventsController < ApplicationController
     end
 
     def hour_params
-      params.require(:hour).permit(:hour_id, :hoursWorked, :weekWorked, :volunteer_id, :section_id)
+      params.require(:hour).permit(:hour_id, :approved, :hoursWorked, :weekWorked, :volunteer_id, :section_id)
     end
 
     def section_params

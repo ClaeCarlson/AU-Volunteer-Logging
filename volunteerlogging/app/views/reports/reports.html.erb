@@ -1,6 +1,6 @@
 <style>
     .jumbotron {
-        margin-top: 10%;
+        margin-top: 5%;
         background-color: white;
     }
 
@@ -13,16 +13,17 @@
         <h1 class="col-4 offset-4">Reports</h1>
     </div>
     <br>
-    <div class="row">
-        <div class="col-6" style="height:400px; width:500px;">
-            <canvas id="hoursPerMonth" width="400" height="400"></canvas>
+    <div class="row col-12">
+        <div class="col-6" style="max-height:400px; max-width:575px;">
+            <canvas id="hoursPerMonth" max-width="400" max-height="500"></canvas>
         </div>
 
-        <div class="col-6" style="height:400px ">
-            <canvas id="amountSaved" width="400" height="400"></canvas>
+        <div class="col-6" style="max-height:400px; max-width:575px;">
+            <canvas id="amountSaved" max-width="400" max-height="500"></canvas>
         </div>
     </div>
-
+    <br>
+    <br>
     <div class="row col-12">
         <%= link_to "Back", "/admins/dashboard", :class=>"btn col-2 offset-10"%>
     </div>
