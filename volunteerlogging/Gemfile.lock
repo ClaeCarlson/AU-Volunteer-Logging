@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/nerian/bootstrap-wysihtml5-rails.git
+  revision: 245d7a99250cf999cc7a0bd4ca9785f74af0357b
+  specs:
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -254,6 +261,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.0.0.alpha3)
+  bootstrap-wysihtml5-rails!
   byebug
   capybara (~> 2.13)
   chart-js-rails

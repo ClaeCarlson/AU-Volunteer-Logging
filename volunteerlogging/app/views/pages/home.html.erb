@@ -32,7 +32,20 @@
 
     <div id="adminLogin">
     </div>
-    <script>
+
+
+<img  id="cat" alt="transparent black cat gif" class="main" data-link="/gifs/43971-transparent-black-cat-gif" oncontextmenu="_gaq.push(['_trackEvent', 'gif', 'copy', $(this).data('link')], ['_trackEvent', 'gif', 'copy-from', 'detail']); " style="height:200px; width: 200px;" src="http://25.media.tumblr.com/9f0a84c8bd80809383fcbc84f7cef424/tumblr_mg6gnlOORA1r933q9o1_500.gif" title="transparent black cat gif">
+
+
+     <script>
+
+    $(document).on("mousemove", function(event){
+        
+        $("#cat").css({top: event.pageY - 100  , left: event.pageX - 200, position: 'absolute'});
+       
+    });
+
+
         $("button").click(function(e){
             $("button").hide();
             if(e.target.id == "admin"){

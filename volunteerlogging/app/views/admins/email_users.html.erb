@@ -24,15 +24,15 @@ ul {
     <div id="holder" class="row col-12">
     <div id = "email" class="col-6 ">
         <div class="row col-12">
-        <%= label_tag( :subjectL, "Subject:" , :class=>" col-3 text-right ") %>
+        <%= label_tag( :subjectL, "Subject:" , :class=>" col-2   ") %>
         <%= text_field_tag(:subject , "Subject", :class=>"form-control col-8") %>
         </div>
         <br>
         <div class"row col-12">
-        <%= text_area_tag(:eBody, "Enter Email Content Here", :class=>"form-control col-9 offset-3", :rows=>"6") %>
+       <textarea id="eBody" class='wysihtml5 form-control col-3 offset-1' placeholder="Enter text ..."></textarea>
         </div>
         <br>
-        <button id="sendEmail" type="button" class="btn btn-primary col-3 offset-2 ">Send Email</button>
+        <button id="sendEmail" type="button" class="btn btn-primary col-3 offset-1 ">Send Email</button>
     </div>
     <div id="select" class="col-6">
         <div class="row col-12">
@@ -69,11 +69,31 @@ ul {
 </div>
 
 <script>
+
+
+
+
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
+});
+
+
 var allVols = <%= @volunteers.to_json.html_safe %>
 var groups = <%= @groups.to_json.html_safe %>
 var send = {};
   $(document).ready(function(){
   
+  $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({
+          'toolbox':{
+              'color': true,
+              'lists': true,
+      'html': true,
+      'link': true,
+      'image': true,
+          }
+      });
+    });
 
   var vlist = "<ul id='volunteersList' class='list-unstyled'>";
   $.each(allVols, function(key, obj){
