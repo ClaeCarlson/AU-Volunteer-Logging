@@ -33,13 +33,17 @@ button[name="report"], button[name="registers"] {
 
 	<h2 class="welcome">Welcome, <%= current_volunteer.firstName =%></h2>
         
-            <button id="hours" class = "btn  col-5 col-lg-4">
+            <button id="hours" class = "btn  col-4 col-lg-3">
                <h1 id="hours" >View Hours Worked</h1>
             </button>
     
       
-            <button id="info" name="info" class = "btn btn-lrg col-5 col-lg-4 offset-1">
+            <button id="info" name="info" class = "btn btn-lrg col-4 col-lg-3">
                 <h1 id="info" >Edit Info/Availability</h1>
+            </button>
+
+            <button id="cal" name="cal" class = "btn btn-lrg col-4 col-lg-3 ">
+                <h1 id="cal" >Volunteering Sign Up</h1>
             </button>
        
 </div>
@@ -54,6 +58,9 @@ $("button").click(function(e){
            break;
         case "info":
            window.location = "descriptions";
+           break;
+        case "cal":
+           window.location = "../events";
            break;
         case "empty":
             $("#results").html(" ");
