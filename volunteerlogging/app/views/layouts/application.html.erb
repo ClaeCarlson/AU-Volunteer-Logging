@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-   
+
  </head>
  <style>
  .modal {
@@ -22,26 +22,28 @@
   margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     margin: 15% auto; /* 15% from the top and centered */
-    
+
 }
  </style>
 
   <body>
   <div id="modal" style="display:none" class="modal">
-  
+
   <div id="modal-content " class="modal-content col-6 offset-2">
     <span class="close col-2 offset-10">&times;</span>
     <div id="description"><h3>Description:</h3></div>
     <div id="content" class="row col-12 ">
     </div>
- 
+
   </div>
 </div>
    <% if admin_signed_in? %>
     <%= link_to "logout", destroy_admin_session_path, method: :delete, :class=>"btn col-2 offset-10", :style=>"background-color: white;" %>
+    <br></br>
+    <%= link_to "SuperAdmin", "/super_admin", :class=>"btn col-2 offset-10", :style=>"background-color: white;" %>
     <% elsif volunteer_signed_in? %>
     <%= link_to "logout", destroy_volunteer_session_path, method: :delete, :class=>"btn col-2 offset-10", :style=>"background-color: white;" %>
-    
+
     <% end %>
     <%= yield %>
   </body>
