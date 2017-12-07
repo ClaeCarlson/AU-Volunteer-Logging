@@ -22,7 +22,7 @@ button {
 } h1 {
     font-size: 25px;
 }
-button[name="report"], button[name="registers"] {
+button[name="email"], button[name="report"] {
     margin-top: 8%;
 }
 </style>
@@ -41,8 +41,8 @@ button[name="report"], button[name="registers"] {
             </button>
 
 
-            <button id="register" name="registers" class = "btn col-5 col-lg-4">
-                <h1 id="register">Register Volunteers</h1>
+            <button id="emails" name="email" class = "btn col-5 col-lg-4">
+                <h1 id="emails">Send Emails</h1>
             </button>
 
 
@@ -63,8 +63,8 @@ $("button").click(function(e){
         case "loghours":
            window.location = "/admin_cal";
            break;
-        case "register":
-           window.location = "register";
+        case "emails":
+           window.location = "email";
            break;
         case "reports":
             window.location = "reports";

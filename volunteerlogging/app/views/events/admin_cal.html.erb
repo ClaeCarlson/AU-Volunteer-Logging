@@ -25,7 +25,11 @@
          <div id="results" class="col-12">
         </div>
         <br>
+        
         <div id="signing_in" >
+        
+
+        
         </div>
     </div>
 
@@ -76,6 +80,8 @@ initialize_calendar = function() {
 
 
         eventClick: function(event, jsEvent, view) {
+            
+
 
             $.ajax({
                 url: 'event/showEvent',
@@ -84,7 +90,9 @@ initialize_calendar = function() {
                 data: { id: event.id },
                 success: function(data) {
                     $("#content").html("");
+                    var desc = data["desc"]
 
+                    $("#description").html("<h5>Description:</h5> " + desc[0]["description"]);
                     var a = "";
                     var count = 1;
                     var signup = true;
@@ -126,9 +134,12 @@ initialize_calendar = function() {
 
            
           if(<%= current_admin.to_json.html_safe %>){
-            $.getScript('/create_event', function(response) {
-                $("#event_start_time").val(date.format());
-              
+            $.getScript('/create_event', function(data) {
+                $("#event_start_date").val(date.format());
+                $("#event_end_date").val(date.format());
+                 $("#event_start_time").val("08:00");
+                 $("#event_end_time").val("09:00");
+            
             });
           }
         }

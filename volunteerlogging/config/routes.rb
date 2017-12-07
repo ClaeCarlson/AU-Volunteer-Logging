@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   post 'admins/log_hours', to: 'hours#create'
   get 'admins/register', to: 'volunteers#new'
   get 'admins/reports', to: 'reports#reports'
+  get 'admins/email', to: 'admins#email_users'
+  post 'admins/email', to: 'admins#send_emails'
 
   get 'calendar', to: 'calendar#calendar'
 

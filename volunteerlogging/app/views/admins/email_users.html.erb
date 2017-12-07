@@ -1,0 +1,150 @@
+<style>
+.jumbotron {
+    
+    background-color: white;
+    margin-top: 5%;
+    
+    max-height: 600px;
+}
+
+
+#groups, #volunteers {
+    max-height: 450px;
+    overflow: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+</style>
+
+<div class="jumbotron col-10 offset-1">
+    
+    <%= form_tag do %>
+    <div id="holder" class="row col-12">
+    <div id = "email" class="col-6 ">
+        <div class="row col-12">
+        <%= label_tag( :subjectL, "Subject:" , :class=>" col-3 text-right ") %>
+        <%= text_field_tag(:subject , "Subject", :class=>"form-control col-8") %>
+        </div>
+        <br>
+        <div class"row col-12">
+        <%= text_area_tag(:eBody, "Enter Email Content Here", :class=>"form-control col-9 offset-3", :rows=>"6") %>
+        </div>
+        <br>
+        <button id="sendEmail" type="button" class="btn btn-primary col-3 offset-2 ">Send Email</button>
+    </div>
+    <div id="select" class="col-6">
+        <div class="row col-12">
+        <div class="row col-12 ">
+            <h4 class=" offset-3"> Select People/Group </h4>
+        </div>
+        <div class="col-5">
+            <div class="row col-12">
+                <label class="col-12 text-center">Groups</label>
+            
+            <div id="groups">
+            </div>
+            </div>
+        </div>
+        <div class="col-5 offset-1">
+            <div class="row col-12">
+                <label class="col-5">Volunteers:</label><input id="name" class="form-control col-6 offset-1">
+            
+            <br>
+            <div id="volunteers">
+                
+            </div></div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <% end %>
+    <br><br>
+    <div class="row col-12">
+        <%= link_to "back", "/admins/dashboard", :class=>" btn col-1 offset-10"%>
+        
+    </div>
+    <br>
+</div>
+
+<script>
+var allVols = <%= @volunteers.to_json.html_safe %>
+var groups = <%= @groups.to_json.html_safe %>
+var send = {};
+  $(document).ready(function(){
+  
+
+  var vlist = "<ul id='volunteersList' class='list-unstyled'>";
+  $.each(allVols, function(key, obj){
+    vlist += "<li class='col-10' name ='vol' id='"+ obj.firstName + " " + obj.lastName+ "' ><input type='checkbox' class='checkbox col-2' name='volunteers' value='" + obj.email +"'><label class='col-8'>  " + obj.firstName + " " + obj.lastName+ "</label></li>";
+  });
+  vlist +="</ul>";
+  
+  $("#volunteers").html(vlist);
+
+  $("li[name='vol']").each(function(){
+    $(this).hide();
+  });
+
+    
+    var gmap = {};
+    $.each(groups, function(key, group){
+        gmap[group.Voltype] = group.Voltype;
+
+    });
+     var glist =  "<ul id='groupList' class='col-12'>";
+    $.each(gmap, function(key, value){
+       glist += "<li style=' ' class='col-12' id='"+ key +  "' ><input type='checkbox' class='checkbox col-2' name='groups' value='" + key+ "'><label>"+key +"</label></li>";
+
+    });
+    glist += "</ul>";
+
+    $("#groups").html(glist);
+});
+
+$("#name ").keyup(function(e){
+    $(" li[name='vol']").each(function(){
+      var str = this.id.toLowerCase();
+   
+      var filter = e.target.value.toLowerCase();
+      var res = str.match("(.*|\s?)"+filter+".*");
+      if(e.target.value == "")
+        $("#volunteers").hide();
+      else
+        $("#volunteers").show();
+      
+      if(res != null)
+        $(this).show();
+      else
+        $(this).hide();
+    });
+  });
+
+
+    $("button").click(function(){
+        var userlist = {};
+        var emailUsers = $("input[name='volunteers']:checked");
+            emailUsers.each(function(){
+                userlist[this.value] = this.value
+            });
+    var emailGroups = $("input[name='groups']:checked");
+            var grouplist = {};
+            emailGroups.each(function(){
+                grouplist[this.value] = this.value
+            });
+        var body = $("#eBody").val();
+        var subject = $("#subject").val();
+
+        $.ajax({
+            url: "/admins/email",
+            type: "post",
+            dataType: "json",
+            data: {"emailUsers": userlist,"emailGroups":grouplist, "ebody": body, "subject": subject },
+            success: function(){
+                alert("email sent");
+            },
+        });
+    });
+    
+</script>

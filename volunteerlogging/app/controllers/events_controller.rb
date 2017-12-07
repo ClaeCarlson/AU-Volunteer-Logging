@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+
   def create_event
   end
 
@@ -17,8 +18,10 @@ class EventsController < ApplicationController
   end
   
   def sign_up    
+    
     @hour = Hour.new(hour_params)
-  
+    
+    signed = Volunteer.find_by_sql("select COUNT(*) from hours where volunteer_id = #{@hour.volunteer_id} && section_id =#{@hour.section_id}")
     
     respond_to do |format|
       if @hour.save
@@ -43,22 +46,19 @@ class EventsController < ApplicationController
 
   def createSections
     
-    event = params["event"]
+    @event = params["event"]
     repeated = params["event_repeated"]
     @newevent = Event.new(event_params)
     @newevent.save
-    puts event
+  
     startTime = event["start_time(4i)"].to_i
     endTime = event["end_time(4i)"].to_i
-    puts startTime
-    puts endTime
-  
+    
     num =  startTime + (endTime - startTime)
    
     eid = Event.find_by_sql("select id, repeated_id from events order by id desc limit 1")
     
-    puts num
-    for i in startTime..num 
+     for i in startTime..num 
     
       params['section'] = {"start(1i)"=> event["start_time(1i)"],
                       "start(2i)" => event["start_time(2i)"],
@@ -80,7 +80,8 @@ class EventsController < ApplicationController
     end
     
     respond_to do |format|
-      format.json {render json: @newevent}
+      format.html {redirect_to "/admin_cal"}
+      
     end
     
   end
@@ -89,8 +90,10 @@ class EventsController < ApplicationController
     @hour = Hour.new
     eid = params["id"]
     secs = Volunteer.find_by_sql("select id,start,end from sections where event_id = #{eid}")
+    @descrition = Event.find_by_sql("select description from events where id = #{eid}")
     count = 0
     @dataHash = Hash.new
+    @dataHash["desc"] = @descrition 
     @dataHash[0] = secs
     secs.each do |sec|
       @dataHash[sec.id] = Volunteer.find_by_sql("select firstName, lastName, id from
@@ -101,6 +104,7 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       format.json {render json: @dataHash }
+
     end
   end
 

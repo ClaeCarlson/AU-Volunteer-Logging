@@ -9,6 +9,47 @@ class AdminsController < ApplicationController
    
   end
 
+  
+  def email_users
+    @volunteers = Volunteer.all
+    @groups = Volunteer.find_by_sql("select Voltype from volunteers")
+  end
+
+  def send_emails
+    emailUsers = params["emailUsers"]
+    emailGroups = params["emailGroups"]
+    
+    subject = params["subject"]
+    body = params["ebody"]
+
+    emailList = Hash.new
+    if emailUsers != nil
+      emailUsers.each_pair do |key, value|
+        emailList[key] = key
+      end
+    end
+
+    if emailGroups != nil 
+        emailGroups.each_pair do |key, value|
+          res = Volunteer.find_by_sql("select email from volunteers where Voltype = '#{key}'")
+          puts res
+          res.each do |k|
+            puts k
+            emailList[k.email] = k.email
+          end
+        
+      end
+    end
+    emailList.each_key do |email|
+      NotifierMailer.volunteers(email ,subject,body).deliver_now
+    end
+    
+      respond_to do |format|
+      format.json { render json: emailList }
+    end
+
+  end
+
   def dashboard
    
   end
